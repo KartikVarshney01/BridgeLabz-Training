@@ -55,3 +55,38 @@ By the end of Day 2, the focus was to:
 - Clear understanding of how .NET applications work internally
 - Stronger grasp of C# syntax and operators
 - Improved confidence in solving beginner to intermediate problems
+
+---
+
+# 🗓️ Day 3 – 19 December 2025
+
+## 🎯 Goals Accomplished Today
+Today’s learning was focused on:
+- 📚 Understanding **Access Control in C#**
+- 🔄 Revisiting previously learned **C# fundamentals**
+- 🔍 Exploring **C# reference and learning materials**
+- 🧩 Practicing problem-solving with **LeetCode**
+
+---
+
+## ⚙️ Tasks Completed
+- 🛡️ Studied **C# Access Modifiers**, including:
+  - `public`
+  - `private`
+  - `protected`
+  - `internal`
+- 🔄 Revised key C# concepts:
+  - Data Types  
+  - Operators  
+  - Basic syntax and program structure
+- 📖 Read **C# documentation and study resources** to strengthen understanding
+- 🧩 Solved **8 LeetCode questions** to improve coding and logical skills
+
+---
+
+## 💡 Learning Outcomes
+- 🎯 Developed a clear understanding of **scope and visibility using access modifiers**
+- 🔁 Reinforced foundational knowledge through **concept revision**
+- 🧠 Improved problem-solving ability with **consistent LeetCode practice**
+- 🚀 Built stronger confidence by balancing **theory and hands-on coding**
+
