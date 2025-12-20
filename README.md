@@ -58,7 +58,7 @@ By the end of Day 2, the focus was to:
 
 ---
 
-# 🗓️ Day 3 – 19 December 2025
+# 🗓️ Day 3 – 20 December 2025
 
 ## 🎯 Goals Accomplished Today
 Today’s learning was focused on:
