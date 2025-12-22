@@ -58,7 +58,7 @@ By the end of Day 2, the focus was to:
 
 ---
 
-# 🗓️ Day 3 – 20 December 2025
+## 🗓️ Day 3 – 20 December 2025
 
 ## 🎯 Goals Accomplished Today
 Today’s learning was focused on:
@@ -83,6 +83,34 @@ Today’s learning was focused on:
 - 🧩 Solved **8 LeetCode questions** to improve coding and logical skills
 
 ---
+
+## 📅 Day 4 — 22 December 2025
+
+## 🎯 Learning Goals
+- Understand **Control Flow** in C#  
+- Learn different **Control Flow Statements**  
+- Solve coding problems using control flow
+
+### 🔀 What is Control Flow?
+Control Flow determines the **order of execution** of statements in a program:
+- Make decisions
+- Repeat operations
+- Branch logic based on conditions
+
+### 🛠️ Types of Control Flow Statements
+1. **Conditional Statements**: `if`, `if-else`, `else if`, `switch`  
+2. **Loops**: `for`, `while`, `do-while`, `foreach`  
+3. **Jump Statements**: `break`, `continue`, `return`.
+
+### ✅ Key Takeaways
+- Control flow guides **how and when code executes**  
+- Conditionals handle **decision-making**  
+- Loops reduce redundancy  
+- Jump statements control execution flow
+
+### 🚀 Outcome
+- Improved understanding of **program execution**  
+- Better logical thinking and problem-solving skills
 
 ## 💡 Learning Outcomes
 - 🎯 Developed a clear understanding of **scope and visibility using access modifiers**
