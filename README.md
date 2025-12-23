@@ -118,3 +118,24 @@ Control Flow determines the **order of execution** of statements in a program:
 - 🧠 Improved problem-solving ability with **consistent LeetCode practice**
 - 🚀 Built stronger confidence by balancing **theory and hands-on coding**
 
+---
+
+## 📅 Day 5 — 23 December 2025
+
+### 🎯 Learning Goals
+- Understand arrays in C#
+- Learn array initialization
+- Work with 1-D and 2-D arrays
+- Solve problems using arrays
+
+### 📚 Arrays Overview
+An array stores multiple values of the same data type and is accessed using indexes.
+
+### 🔹 Types of Arrays
+- **1-D Array**: Stores data in a single sequence  
+- **2-D Array**: Stores data in rows and columns
+
+### 🧠 Key Takeaways
+- Arrays simplify handling multiple values
+- Loops are essential for array processing
+- 1-D and 2-D arrays suit different data needs
