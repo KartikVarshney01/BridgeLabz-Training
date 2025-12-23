@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace BridgeLabzTraining.core_csharp_practice.gcr_codebase.arrays.level2
+{
+    internal class LargestAndSecondLargest
+    {
+        static void Main(String[] args)
+        {
+            // Initialize the digits array and take user input for number.
+            Console.Write("Enter the number : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            int maxDigits = 10;
+            int[] values = new int[maxDigits];
+
+            int idx = 0;
+
+            while (num > 0)
+            {
+                if (idx == 10) break;
+
+                int remainder = num % 10;
+                values[idx++] = remainder;
+                num /= 10;
+
+            }
+
+            // Initializing Largest and Second Largest elements
+            int Largest = 0;
+            int SecondLargest = 0;
+
+            for (int i = 0; i < maxDigits; i++)
+            {
+                if (values[i] > Largest)
+                {
+                    SecondLargest = Largest;
+                    Largest = values[i];
+                }
+                else if (values[i] > SecondLargest && values[i] != Largest) SecondLargest = values[i];
+            }
+
+            // Output
+
+            Console.WriteLine($"The Largest Element is : {Largest}");
+            Console.WriteLine($"The Second Largest Element is {SecondLargest}");
+        }
+    }
+}
