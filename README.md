@@ -139,3 +139,29 @@ An array stores multiple values of the same data type and is accessed using inde
 - Arrays simplify handling multiple values
 - Loops are essential for array processing
 - 1-D and 2-D arrays suit different data needs
+
+---
+
+## 📅 Day 6 — 24 December 2025
+
+### 🎯 Learning Goals
+- Understand methods in C#
+- Learn how to define and call methods
+- Use parameters and return values
+- Solve problems using methods
+
+### 📚 Methods Overview
+A method is a block of code that performs a specific task.  
+Methods help in organizing code, improving readability, and promoting reusability.
+
+### 🔹 Types of Methods
+- **Void Methods**: Perform an action but do not return a value  
+- **Return Type Methods**: Perform an action and return a value  
+- **Methods with Parameters**: Accept input values to process data  
+- **Methods without Parameters**: Execute tasks without external input
+
+### 🧠 Key Takeaways
+- Methods reduce code duplication
+- Parameters make methods flexible
+- Return values help in processing results
+- Methods improve code structure and maintainability
