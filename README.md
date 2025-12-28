@@ -165,3 +165,27 @@ Methods help in organizing code, improving readability, and promoting reusabilit
 - Parameters make methods flexible
 - Return values help in processing results
 - Methods improve code structure and maintainability
+
+---
+
+## 📅 Day — 26 December 2025
+
+### 🎯 Learning Goals
+- Understand strings in C#
+- Learn string methods
+- Practice string-based logic
+
+### 📚 Strings Overview
+A **string** is a sequence of characters used to store text.  
+Strings in C# are **immutable**.
+
+### 🔹 Topics Covered
+- String declaration & initialization
+- Common string methods
+- Character traversal
+- String manipulation
+
+### 🧠 Key Takeaways
+- Strings are immutable
+- Built-in methods simplify text processing
+- String logic is essential for real-world applications
