@@ -189,3 +189,32 @@ Strings in C# are **immutable**.
 - Strings are immutable
 - Built-in methods simplify text processing
 - String logic is essential for real-world applications
+
+---
+
+## 📅 Day — 29 December 2025
+
+### 🎯 Learning Goals
+- Understand the basics of **Object-Oriented Programming (OOP)**
+- Learn how OOP improves code structure
+- Relate OOP with previously learned C# concepts
+
+### 📚 Introduction to OOP
+**Object-Oriented Programming (OOP)** organizes programs using **classes** and **objects**, making code modular, reusable, and easy to maintain.
+
+### 🔹 Core OOP Concepts (Overview)
+- **Class**: Blueprint that defines data and behavior
+- **Object**: Instance of a class
+- **Encapsulation**: Binding data and methods together
+- **Abstraction**: Showing only essential details
+
+### 🔗 Applying Previous Concepts in OOP
+- Variables become **class fields**
+- Methods become **class behaviors**
+- Arrays and strings are handled inside classes
+- Programs are structured into logical units
+
+### 🧠 Key Takeaways
+- OOP improves code organization and readability
+- Classes group related data and logic
+- Solved scenario-based problems using previously learned concepts
