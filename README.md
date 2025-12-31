@@ -1,18 +1,16 @@
 # 🚀 BridgeLabz Training
 
-## 📅 Day 1 — 18 December 2025
+--- 
 
----
+## 📅 Day 1 - 18 December 2025
 
-## 🎯 Learning Goals
+### 🎯 Learning Goals
 By the end of Day 1, the focus was to:
 - 💡 Understand the fundamentals of **C#** and the **.NET Framework**
 - 🔧 Learn the basic **Git & GitHub workflow**
 - 🗂️ Create and maintain a **clean project structure** for training
 
----
-
-## 🛠️ Activities & Work Completed
+### 🛠️ Activities & Work Completed
 - 🧑‍💻 Created a new **GitHub repository**
 - 🔗 Connected the repository with the local system
 - 📂 Initialized Git using `git init`
@@ -22,54 +20,44 @@ By the end of Day 1, the focus was to:
 - 🔍 Understood the difference between **Compiler and Interpreter**
 - ❓ Solved and discussed **10 basic C# programming questions**
 
----
-
-## 🧠 Key Takeaways
+### 🧠 Key Takeaways
 - Importance of version control in real-world projects  
 - Role of .NET in application development  
 - How structured repositories improve maintainability  
 
 ---
 
-## 📅 Day 2 — 19 December 2025
+## 📅 Day 2 - 19 December 2025
 
----
-
-## 🎯 Learning Goals
+### 🎯 Learning Goals
 By the end of Day 2, the focus was to:
 - 🧩 Understand the .NET Framework architecture
 - 📘 Strengthen fundamentals of C# programming
 - 🧠 Improve logical thinking through problem-solving
 
----
-
-## 🛠️ Activities & Work Completed
+### 🛠️ Activities & Work Completed
 - 🏗️ Studied core components of the .NET Framework
 - 📚 Learned C# fundamentals: Operators, Access Modifiers, Data Types
 - ✅ Solved 16 Level-1 coding problems
 - 🔍 Practiced 12 Level-2 problem-solving questions
 
----
-
-## 🧠 Key Takeaways
+### 🧠 Key Takeaways
 - Clear understanding of how .NET applications work internally
 - Stronger grasp of C# syntax and operators
 - Improved confidence in solving beginner to intermediate problems
 
 ---
 
-## 🗓️ Day 3 – 20 December 2025
+## 🗓️ Day 3 - 20 December 2025
 
-## 🎯 Goals Accomplished Today
+### 🎯 Goals Accomplished Today
 Today’s learning was focused on:
 - 📚 Understanding **Access Control in C#**
 - 🔄 Revisiting previously learned **C# fundamentals**
 - 🔍 Exploring **C# reference and learning materials**
 - 🧩 Practicing problem-solving with **LeetCode**
 
----
-
-## ⚙️ Tasks Completed
+### ⚙️ Tasks Completed
 - 🛡️ Studied **C# Access Modifiers**, including:
   - `public`
   - `private`
@@ -86,7 +74,7 @@ Today’s learning was focused on:
 
 ## 📅 Day 4 — 22 December 2025
 
-## 🎯 Learning Goals
+### 🎯 Learning Goals
 - Understand **Control Flow** in C#  
 - Learn different **Control Flow Statements**  
 - Solve coding problems using control flow
@@ -112,7 +100,7 @@ Control Flow determines the **order of execution** of statements in a program:
 - Improved understanding of **program execution**  
 - Better logical thinking and problem-solving skills
 
-## 💡 Learning Outcomes
+### 💡 Learning Outcomes
 - 🎯 Developed a clear understanding of **scope and visibility using access modifiers**
 - 🔁 Reinforced foundational knowledge through **concept revision**
 - 🧠 Improved problem-solving ability with **consistent LeetCode practice**
@@ -120,7 +108,7 @@ Control Flow determines the **order of execution** of statements in a program:
 
 ---
 
-## 📅 Day 5 — 23 December 2025
+## 📅 Day 5 - 23 December 2025
 
 ### 🎯 Learning Goals
 - Understand arrays in C#
@@ -142,7 +130,7 @@ An array stores multiple values of the same data type and is accessed using inde
 
 ---
 
-## 📅 Day 6 — 24 December 2025
+## 📅 Day 6 - 24 December 2025
 
 ### 🎯 Learning Goals
 - Understand methods in C#
@@ -168,7 +156,7 @@ Methods help in organizing code, improving readability, and promoting reusabilit
 
 ---
 
-## 📅 Day 7 — 26 December 2025
+## 📅 Day 7 - 26 December 2025
 
 ### 🎯 Learning Goals
 - Understand strings in C#
@@ -192,7 +180,7 @@ Strings in C# are **immutable**.
 
 ---
 
-## 📅 Day 8 — 29 December 2025
+## 📅 Day 8 - 29 December 2025
 
 ### 🎯 Learning Goals
 - Understand the basics of **Object-Oriented Programming (OOP)**
@@ -221,7 +209,7 @@ Strings in C# are **immutable**.
 
 ---
 
-## 📅 Day 9 — 30 December 2025
+## 📅 Day 9 - 30 December 2025
 
 ### 🎯 Learning Goals
 - Understand the concept of **constructors** in C#
