@@ -246,3 +246,121 @@ Its primary role is to **initialize class data members**.
 
 ---
 
+## 📅 Day 10 - 31 December 2025
+
+### 🎯 Learning Goals
+- Solve **scenario-based problems**  
+- Work on **Bank Manager & Math Utility** scenarios  
+- Design an **Invoice Generator**  
+- Understand basics of `this`, `static`, `sealed`, and `is` operator  
+
+## 🛠️ Activities & Work Completed
+
+### 🏦 Scenario 1: Bank Manager & Math Utility
+- Solved scenario-based problems using:
+  - Methods
+  - Variables
+  - Conditional statements
+- Used `static` methods for **Math Utility** operations
+- Focused on logical flow and correctness
+
+### 🧾 Scenario 2: Invoice Generator
+- Built an **Invoice Generator** to:
+  - Accept item details
+  - Calculate total amount
+- Practiced clean input–process–output flow
+
+### 📚 Concepts Learned
+- **`this`**: Refers to the current instance  
+- **`static`**: Used for shared methods and data  
+- **`sealed`**: Prevents inheritance  
+- **`is` Operator**: Used for type checking  
+
+### 🧠 Key Takeaways
+- Scenario-based problems improve **logical thinking**
+- `static` methods are useful for utility logic
+- Clear understanding of important C# keywords
+- Strong foundation for upcoming OOP concepts
+
+---
+
+## 📅 Day 11 - 1 January 2026
+
+### 🎯 Learning Goals
+- Understand **Class vs Object**
+- Learn basics of **UML diagrams**
+- Solve a **scenario-based problem**
+
+## 🛠️ Work Completed
+
+### 📘 Class vs Object
+- Class: blueprint defining data and behavior  
+- Object: instance created from a class  
+
+### 📐 UML Basics
+- **Class Diagram**: system structure  
+- **Object Diagram**: runtime state  
+- **Sequence Diagram**: execution flow  
+
+### ☕ Scenario: Cafeteria Menu
+- Used **arrays** to store menu items and prices  
+- Used **methods** to:
+  - Display menu  
+  - Handle user choice  
+  - Calculate total bill  
+
+### 🧠 Key Takeaways
+- Clear distinction between class and object  
+- UML helps visualize design and flow  
+- Arrays manage data, methods manage logic  
+
+---
+
+## 📅 Day 12 - 2 January 2026
+
+### 🎯 Learning Goals
+- Understand the concept of **Inheritance** in C#
+- Learn why inheritance is used in software design
+- Solve **scenario-based problems**
+- Strengthen logic using **arrays and control flow**
+
+## 📚 Concept Learned: Inheritance
+- Inheritance allows one class to **reuse properties and methods** of another
+- Helps reduce code duplication
+- Improves structure and maintainability
+- Learned at a **conceptual level**
+
+## 🛠️ Activities & Work Completed
+
+### 🚌 Scenario 1: Bus Route Tracker
+- Implemented a bus tracking system using:
+  - **Arrays** to store:
+    - Bus stop names
+    - Distance between stops
+    - Passenger travel details
+- Program flow:
+  - Bus reaches a stop
+  - Passengers **deboard** at their destination
+  - Fare calculated based on **distance travelled**
+  - New passengers **board** the bus
+- Focused on:
+  - Sequential execution
+  - Conditional logic
+  - Data handling using arrays
+
+### 🎲 Scenario 2: Lucky Draw System
+- Built a lucky draw program using:
+  - **Arrays** to store participant names
+  - Random number generation
+- Used program logic to:
+  - Register participants
+  - Select a random winner
+  - Display results
+
+## 🧠 Key Takeaways
+- Conceptual clarity of **inheritance**
+- Arrays help manage related data efficiently
+- Control flow drives real-world simulations
+- Scenario-based practice improves problem-solving skills
+
+---
