@@ -16,5 +16,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
         // Check Attendance is used to check whether the current employee is present today or not.
         void CheckAttendance(Employee employee);
 
+        // UC-2 CalculateDailyWage is used to calculate the daily wage depending on whether the employee is present or not.
+        void CalculateDailyWage(Employee employee);
     }
 }

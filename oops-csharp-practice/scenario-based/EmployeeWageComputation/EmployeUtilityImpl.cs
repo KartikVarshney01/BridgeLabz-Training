@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageComputation
@@ -12,9 +13,14 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
         // Initializing the random method for the 1st UC to get random input for present or absent
         private static Random random = new Random();
 
+        // Creating Daily Wage Rate and Hours for UC-2
+        private int perHourWage = 20;
+        private int fullDayHours = 8;
+
         // Writing the implementation of the Add Employee To add new employ or make a new employ
         public Employee AddEmployee()
         {
+            
             // Creating a new Employ Object
             Employee employee = new Employee();
 
@@ -44,6 +50,21 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
         public void CheckAttendance(Employee employee)
         {
             Console.WriteLine($"Employee Present Today : {employee.IsPresent}");
+        }
+
+        // UC-2 works on calculating daily wages based on whether a employee is present or not.
+        public void CalculateDailyWage(Employee employee)
+        {
+            if (employee.IsPresent)
+            {
+                int dailyWage = perHourWage * fullDayHours;
+                Console.WriteLine($"The Daily wage of employee is : {dailyWage}");
+            }
+            else
+            {
+                Console.WriteLine("Employee is absent today. Today's Wage is 0");
+
+            }
         }
     }
 }

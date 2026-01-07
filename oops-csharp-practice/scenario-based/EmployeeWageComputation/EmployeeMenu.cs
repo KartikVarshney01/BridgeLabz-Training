@@ -26,7 +26,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
                 Console.WriteLine("1. Add Employee");
                 Console.WriteLine("2. Dislpay Employee Information");
                 Console.WriteLine("3. View Employee Toadys Attandance");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("4. Find Employee Today's Wage");
+                Console.WriteLine("5. Exit");
 
                 int option = Convert.ToInt32(Console.ReadLine());
 
@@ -48,10 +49,20 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
                             Console.WriteLine("No employee added yet");
                         break;
                     case 4:
-                        Console.WriteLine("Ending the Program.");
+                        if(currentEmployee != null)
+                        {
+                            utilityCall.CalculateDailyWage(currentEmployee);
+                        }
+                        else
+                        {
+                            Console.WriteLine("No Employee added yet");
+                        }
                         break;
+                    case 5:
+                        Console.WriteLine("Exit the Program");
+                        return;
                     default:
-                        Console.WriteLine("Enter between 1-4");
+                        Console.WriteLine("Enter between 1-5");
                         return;
                 }
             }
