@@ -364,3 +364,77 @@ Its primary role is to **initialize class data members**.
 - Scenario-based practice improves problem-solving skills
 
 ---
+
+## 📅 Day 13 - 5 January 2026
+
+### 🎯 Learning Goals
+- Learn **Encapsulation**, **Abstraction**, and **Interfaces** in C#
+- Apply OOP concepts to **scenario-based problems**
+
+### 📚 Concepts Learned
+- **Encapsulation**: Data hiding using private fields and public properties (get/set)
+- **Abstraction**: Focus on what an object does using abstract classes and interfaces
+- **Interface**: Defines a contract that implementing classes must follow
+
+### 🛠️ Activities & Work Completed
+
+### 🏥 Hospital Patient Management System
+- Used encapsulation for patient data
+- Implemented patient types using inheritance
+- Applied **IPayable** interface for bill calculation
+
+### 🚗 Vehicle Rental Application
+- Created an abstract **Vehicle** class
+- Implemented vehicle types (Car, Bike, Truck)
+
+
+### 🧠 Key Takeaways
+- Encapsulation protects data
+- Abstraction reduces complexity
+- Interfaces improve code structure
+- OOP concepts fit real-world applications
+
+---
+
+## 📅 Day 14 - 6 January 2026
+
+### 🎯 Learning Goals
+- Strengthen problem-solving using **scenario-based programs**
+- Practice **OOP concepts** with real-world examples
+- Improve logic using **arrays and control flow**
+
+### 🛠️ Activities & Work Completed
+
+### 🐦 Scenario 1: Bird Sanctuary System
+- Designed a bird sanctuary application using:
+  - Classes to represent birds
+  - Arrays to store bird details
+- Program features:
+  - Add different bird types
+  - Display bird information
+  - Demonstrate bird behaviors
+- Focused on:
+  - Object creation
+  - Data organization
+  - Clean program flow
+
+### 📞 Scenario 2: Call Log Manager
+- Built a call log management system using:
+  - Arrays to store call details (number, message, time)
+- Program logic included:
+  - Add call records
+  - Display call history
+  - search by keyword
+  - sort by timestamp
+- Focused on:
+  - Conditional logic
+  - Iteration using loops
+  - Real-world data handling
+
+## 🧠 Key Takeaways
+- Scenario-based programs improve logical thinking
+- Arrays help manage structured data efficiently
+- Real-life systems can be modeled using simple OOP concepts
+- Practice enhances confidence in program design
+
+---
