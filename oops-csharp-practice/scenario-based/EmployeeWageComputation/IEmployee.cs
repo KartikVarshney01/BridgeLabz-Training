@@ -18,5 +18,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
 
         // UC-2 CalculateDailyWage is used to calculate the daily wage depending on whether the employee is present or not.
         void CalculateDailyWage(Employee employee);
+
+        // UC-3 Calculate Part Time Wage is used to calculate part time employee wage
+        void CalculatePartTimeWage(Employee employee);
     }
 }

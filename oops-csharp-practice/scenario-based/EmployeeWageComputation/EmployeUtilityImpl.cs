@@ -34,6 +34,10 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
             Console.Write("Enter Employee Salary: ");
             employee.EmployeeSalary = Convert.ToDouble(Console.ReadLine());
 
+            Console.Write("Enter Whether Employee is Full Time Or Part Time (part/full): ");
+            string partOrFull = Console.ReadLine();
+            employee.IsFullOrPart = partOrFull.ToLower() == "full";
+
             // UC-1 random assigning present and absent using random function to 
             employee.IsPresent = random.Next(2) == 1;
 
@@ -64,6 +68,22 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
             {
                 Console.WriteLine("Employee is absent today. Today's Wage is 0");
 
+            }
+        }
+
+        // UC-3 works on calculating daily wages for a part time employee
+        public void CalculatePartTimeWage(Employee employee)
+        {
+            int partTimeHours = 8;
+            // Checking if the employee is present and part time.
+            if (employee.IsPresent && !employee.IsFullOrPart)
+            {
+                int partDailyWage = partTimeHours * perHourWage;
+                Console.WriteLine($"The Part Time Employee Daily Wage : {partDailyWage}");
+            }
+            else
+            {
+                Console.WriteLine("Employee Is Not a Part Time Employee Or is Absent Today");
             }
         }
     }

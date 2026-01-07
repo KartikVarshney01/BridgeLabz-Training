@@ -27,7 +27,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
                 Console.WriteLine("2. Dislpay Employee Information");
                 Console.WriteLine("3. View Employee Toadys Attandance");
                 Console.WriteLine("4. Find Employee Today's Wage");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("5. Find Part Employee Today's Wage");
+                Console.WriteLine("6. Exit");
 
                 int option = Convert.ToInt32(Console.ReadLine());
 
@@ -59,6 +60,16 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
                         }
                         break;
                     case 5:
+                        if(currentEmployee != null)
+                        {
+                            utilityCall.CalculatePartTimeWage(currentEmployee);
+                        }
+                        else
+                        {
+                            Console.WriteLine("No Employee added yet");
+                        }
+                        break;
+                    case 6:
                         Console.WriteLine("Exit the Program");
                         return;
                     default:

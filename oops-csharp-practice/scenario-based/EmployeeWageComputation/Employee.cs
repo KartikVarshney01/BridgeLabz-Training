@@ -13,6 +13,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
         private string employeeName;
         private double employeeSalary;
         private bool isPresent; // Checking if employee was present today or absent
+        private bool isFullOrPart; // Checking if employee is full time or part time
 
         // Using getter and setter methods to get or set the values of the private variables
         public int EmployeeId
@@ -39,10 +40,16 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
             set { isPresent = value; }
         }
 
+        public bool IsFullOrPart
+        {
+            get { return isFullOrPart; }
+            set { isFullOrPart = value; }
+        }
+
         // Writing ToString method to override the default one 
         public override string ToString()
         {
-            return $"Name : {EmployeeName} || ID : {EmployeeId} || Salary : {EmployeeSalary} || Present : {IsPresent}";
+            return $"Name : {EmployeeName} || ID : {EmployeeId} || Salary : {EmployeeSalary} || Present : {IsPresent} || Shift : {(!IsFullOrPart?"Part":"Full")}";
         }
 
     }
