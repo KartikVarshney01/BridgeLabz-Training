@@ -19,6 +19,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
             // Creating the object for the Employee Utility Impl
             utilityCall = new EmployeUtilityImpl();
 
+            // UC - 4 Using or implementing Switch Case in the program.
             while (true)
             {
 
