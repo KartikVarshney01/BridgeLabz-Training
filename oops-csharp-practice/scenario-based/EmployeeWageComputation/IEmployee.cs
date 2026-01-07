@@ -21,5 +21,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
 
         // UC-3 Calculate Part Time Wage is used to calculate part time employee wage
         void CalculatePartTimeWage(Employee employee);
+
+        // UC-5 Calculate Monthly Wage where month contains 20 days
+        void CalculateMonthWage(Employee employee);
     }
 }

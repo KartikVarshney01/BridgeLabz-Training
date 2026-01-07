@@ -86,5 +86,21 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
                 Console.WriteLine("Employee Is Not a Part Time Employee Or is Absent Today");
             }
         }
+
+        // UC-5 Calculate a employee full month wage consist of 20 days 
+        public void CalculateMonthWage(Employee employee)
+        {
+            int monthDays = 20;
+            // Checking if the employee is present today or not.
+            if (employee.IsPresent)
+            {
+                int partDailyWage = monthDays * perHourWage * fullDayHours;
+                Console.WriteLine($"The Part Time Employee Daily Wage : {partDailyWage}");
+            }
+            else
+            {
+                Console.WriteLine("Employee Is Absent Today");
+            }
+        }
     }
 }

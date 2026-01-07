@@ -29,7 +29,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
                 Console.WriteLine("3. View Employee Toadys Attandance");
                 Console.WriteLine("4. Find Employee Today's Wage");
                 Console.WriteLine("5. Find Part Employee Today's Wage");
-                Console.WriteLine("6. Exit");
+                Console.WriteLine("6. Calculate Employee Month Wage");
+                Console.WriteLine("7. Exit");
 
                 int option = Convert.ToInt32(Console.ReadLine());
 
@@ -71,6 +72,16 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
                         }
                         break;
                     case 6:
+                        if(currentEmployee != null)
+                        {
+                            utilityCall.CalculateMonthWage(currentEmployee);
+                        }
+                        else
+                        {
+                            Console.WriteLine("No Employee added yet");
+                        }
+                        break;
+                    case 7:
                         Console.WriteLine("Exit the Program");
                         return;
                     default:
