@@ -49,7 +49,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
         // Writing ToString method to override the default one 
         public override string ToString()
         {
-            return $"Name : {EmployeeName} || ID : {EmployeeId} || Salary : {EmployeeSalary} || Present : {IsPresent} || Shift : {(!IsFullOrPart?"Part":"Full")}";
+            return $"Name : {EmployeeName} || ID : {EmployeeId} || Salary : {EmployeeSalary} || Present : {IsPresent} || Shift : {(!IsFullOrPart ? "Part" : "Full")}";
         }
 
     }

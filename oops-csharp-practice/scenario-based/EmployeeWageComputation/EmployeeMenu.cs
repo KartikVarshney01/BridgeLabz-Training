@@ -30,7 +30,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
                 Console.WriteLine("4. Find Employee Today's Wage");
                 Console.WriteLine("5. Find Part Employee Today's Wage");
                 Console.WriteLine("6. Calculate Employee Month Wage");
-                Console.WriteLine("7. Exit");
+                Console.WriteLine("7. Check And Calculate Maximum Hours");
+                Console.WriteLine("8. Exit");
 
                 int option = Convert.ToInt32(Console.ReadLine());
 
@@ -52,7 +53,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
                             Console.WriteLine("No employee added yet");
                         break;
                     case 4:
-                        if(currentEmployee != null)
+                        if (currentEmployee != null)
                         {
                             utilityCall.CalculateDailyWage(currentEmployee);
                         }
@@ -62,7 +63,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
                         }
                         break;
                     case 5:
-                        if(currentEmployee != null)
+                        if (currentEmployee != null)
                         {
                             utilityCall.CalculatePartTimeWage(currentEmployee);
                         }
@@ -72,7 +73,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
                         }
                         break;
                     case 6:
-                        if(currentEmployee != null)
+                        if (currentEmployee != null)
                         {
                             utilityCall.CalculateMonthWage(currentEmployee);
                         }
@@ -82,10 +83,20 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
                         }
                         break;
                     case 7:
+                        if (currentEmployee != null)
+                        {
+                            utilityCall.CalculateMaximumWage(currentEmployee);
+                        }
+                        else
+                        {
+                            Console.WriteLine("No Employee added yet");
+                        }
+                        break;
+                    case 8:
                         Console.WriteLine("Exit the Program");
                         return;
                     default:
-                        Console.WriteLine("Enter between 1-5");
+                        Console.WriteLine("Enter between 1-7");
                         return;
                 }
             }

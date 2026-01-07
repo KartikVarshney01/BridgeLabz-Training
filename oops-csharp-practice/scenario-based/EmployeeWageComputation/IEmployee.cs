@@ -24,5 +24,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
 
         // UC-5 Calculate Monthly Wage where month contains 20 days
         void CalculateMonthWage(Employee employee);
+
+        // UC-6 Calculating wages until maximum work hours or month reach
+        void CalculateMaximumWage(Employee employee);
     }
 }

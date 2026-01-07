@@ -20,7 +20,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
         // Writing the implementation of the Add Employee To add new employ or make a new employ
         public Employee AddEmployee()
         {
-            
+
             // Creating a new Employ Object
             Employee employee = new Employee();
 
@@ -49,7 +49,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
         {
             Console.WriteLine(employee);
         }
-        
+
         // UC-1 of assigning absent or present randomly
         public void CheckAttendance(Employee employee)
         {
@@ -100,6 +100,32 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.EmployeeWageCom
             else
             {
                 Console.WriteLine("Employee Is Absent Today");
+            }
+        }
+
+        // UC-6 Calculate a employee wages until a maximum work hours of 100 is reached or a month of 20 days
+        public void CalculateMaximumWage(Employee employee)
+        {
+            int maximumHours = 100;
+            if (employee.IsPresent)
+            {
+                Console.Write("Enter Current Total work Hours : ");
+                int currentWorkHours = Convert.ToInt32(Console.ReadLine());
+
+                int isMonth = currentWorkHours / fullDayHours;
+                if (isMonth >= 20)
+                {
+                    int maximumWage = 20 * perHourWage * fullDayHours;
+                    Console.WriteLine($"The employee has reached the maximum time. The pay is : {maximumWage}");
+                }else if(isMonth<20 && currentWorkHours >= maximumHours)
+                {
+                    int maxHoursWage = 100 * perHourWage;
+                    Console.WriteLine($"The Employee has reached maximum hours limit. The pay is : {maxHoursWage}");
+                }
+                else
+                {
+                    Console.WriteLine("Employee has not reached maximum work condition.");
+                }
             }
         }
     }
