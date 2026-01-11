@@ -438,3 +438,98 @@ Its primary role is to **initialize class data members**.
 - Practice enhances confidence in program design
 
 ---
+
+## 📅 Day 15 - 7 January 2026
+
+### 🎯 Learning Goals
+- Learn the basics of **Data Structures**
+- Understand **Linked Lists** and their working
+- Solve a **scenario-based problem** using structured logic
+
+### 🛠️ Activities & Work Completed
+
+### 🔗 Topic: Introduction to Linked List
+- Learned what data structures are and why they are important
+- Studied **Linked List** as a dynamic data structure
+- Understood:
+  - Node structure (data and next reference)
+  - Head pointer and traversal
+- Identified advantages like dynamic size and efficient insertions
+
+### 💼 Scenario: Employee Wage Computation
+- Designed an employee wage computation program
+- Implemented logic for:
+  - Employee attendance
+  - Daily and monthly wage calculation
+  - Part-time and full-time scenarios
+- Focused on:
+  - Conditional logic
+  - Real-world problem modeling
+
+### 🧠 Key Takeaways
+- Linked Lists allow flexible memory usage
+- Scenario-based problems improve logic building
+- Proper data structure selection simplifies problem-solving
+
+---
+
+## 📅 Day 16 - 8 January 2026
+
+### 🎯 Learning Goals
+- Learn **Stack, Queue, HashMap, and HashSet**
+- Apply data structures to a **real-world scenario**
+
+### 🛠️ Activities & Work Completed
+
+### 📚 Topic: Stack, Queue, HashMap, HashSet
+- Studied Stack (LIFO) and Queue (FIFO)
+- Implemented basic operations for both
+- Learned HashMap for key–value storage
+- Learned HashSet for unique data handling
+
+### 🏠 Scenario: Smart Home Automation
+- Built a basic smart home system
+- Controlled devices like Light, Fan, and AC
+- Managed device states (ON/OFF)
+
+### 🧠 Key Takeaways
+- Data structures simplify real-world system design
+- Hash-based collections improve performance
+- Scenario-based learning improves problem-solving
+
+---
+
+## 📅 Day 17 - 9 January 2026
+
+### 🎯 Learning Goals
+- Understand and implement **sorting algorithms**
+- Apply sorting logic in **real-world scenarios**
+
+### 🛠️ Activities & Work Completed
+
+### 📚 Topic: Sorting Algorithms
+- Learned basic sorting techniques:
+  - Bubble Sort
+  - Selection Sort
+  - Insertion Sort
+- Understood how sorting improves data processing
+- Practiced sorting using arrays and control flow
+
+### 🏧 Scenario 1: ATM Dispenser System
+- Designed an ATM dispenser simulation
+- Managed currency notes and denominations
+- Implemented logic to:
+  - Dispense correct notes
+  - Validate withdrawal amount
+
+### 🏃 Scenario 2: Fit Tracker System
+- Built a fit tracker application
+- Managed user activity data (calories)
+
+
+### 🧠 Key Takeaways
+- Sorting algorithms organize data efficiently
+- Proper algorithm choice improves performance
+- Scenario-based practice strengthens understanding
+
+---
