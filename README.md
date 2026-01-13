@@ -533,3 +533,58 @@ Its primary role is to **initialize class data members**.
 - Scenario-based practice strengthens understanding
 
 ---
+
+## 📅 Day 18 - 12 January 2026
+
+### 🎯 Learning Goals
+- Understand efficient **string handling** in C#
+- Learn and implement **searching algorithms**
+- Apply concepts through **scenario-based problems**
+
+### 🛠️ Activities & Work Completed
+
+### 📚 Topic 1: StringBuilder
+- Learned about **StringBuilder** and its advantages over `string`
+- Understood:
+  - Mutable nature of StringBuilder
+  - Performance benefits in repeated string modifications
+    
+### 📚 Topic 2: Searching Algorithms
+- Studied searching techniques:
+  - Linear Search
+  - Binary Search
+- Understood:
+  - Time complexity differences
+  - Use cases for each algorithm
+- Implemented searching using arrays and loops
+
+### 🏭 Scenario 1: Metal Factory – Pipe Cutting System
+- Designed a pipe cutting system for a metal factory
+- Managed available pipe sizes and price charts
+- Implemented logic to:
+  - Find suitable pipe sizes
+  - Handle nearest available size when exact size is not present
+  - Calculate total cost based on cuts
+
+### 🪑 Scenario 2: Custom Furniture Manufacturing
+- Built a custom furniture manufacturing system
+- Managed wooden rods and furniture dimensions
+- Implemented logic to:
+  - Validate raw material availability
+  - Calculate remaining material after cutting
+  - Ensure efficient material utilization
+
+### 💰 Scenario 3: Loan Buddy System
+- Designed a loan assistance application
+- Managed user loan details and eligibility criteria
+- Implemented logic to:
+  - Validate loan amount
+  - Display suitable loan options
+
+### 🧠 Key Takeaways
+- StringBuilder improves performance in string-heavy operations
+- Linear Search is simple but less efficient for large data
+- Binary Search is faster but requires sorted data
+- Real-world scenarios help connect theory with practical use
+
+---
