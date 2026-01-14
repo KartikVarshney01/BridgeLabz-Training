@@ -7,6 +7,10 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
     // Interface for the Contacts Class Methods
     internal interface IContacts
     {
+        // UC-2
         void AddContact();
+
+        // UC-3
+        void EditContact();
     }
 }

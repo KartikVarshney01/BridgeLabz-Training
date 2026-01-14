@@ -7,7 +7,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
     internal class AddressBookSystemMenu
     {
         // System Menu Containing The Start of our program. It The Area that is displayed to the user.
-        private ContactsUtilityImpl contactsUtility;
+        private IContacts contactsUtility;
         public void SystemMenu()
         {
             // Creating The Utility Object
@@ -18,6 +18,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             {
                 Console.WriteLine("Welcome To Address Book Program");
                 Console.WriteLine("1. Add New Conatct Details");
+                Console.WriteLine("2. Update Existing Conatct Details");
                 Console.WriteLine("10. Exit The Program");
                 Console.Write("Enter Your Choice : ");
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -26,6 +27,9 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
                 {
                     case 1:
                         contactsUtility.AddContact();
+                        break;
+                    case 2:
+                        contactsUtility.EditContact();
                         break;
                     case 10:
                         Console.WriteLine("Exiting The Address Book System");

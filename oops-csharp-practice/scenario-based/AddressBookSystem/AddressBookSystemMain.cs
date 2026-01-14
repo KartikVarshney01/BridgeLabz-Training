@@ -12,8 +12,9 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         /// The Main Then Calls The Menu Where The System or Our program Starts. It Prints Welcome To Address Book Program.
         /// UC-1 : We have made a encapsulated Contacts class that have all the contacts fields.
         /// UC-2 : We Add A Method To allow addition of a new contact by the user.
+        /// UC-3 : We Add A Method That allows for a user to update a contact info
         /// 
-        /// version - 1.2
+        /// version - 1.3
         /// </summary>
         static void Main(string[] args)
         {
