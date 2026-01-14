@@ -84,5 +84,39 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             Console.WriteLine($"Person {Person.FirstName} Data is Updated\n");
 
         }
+
+        // UC-4 To Delete A Contact Details and It Form the Address Book
+        public void DeleteContact()
+        {
+            if (Person == null)
+            {
+                Console.WriteLine("No Contact Details Enteres yet!\n");
+                return;
+            }
+
+            Console.Write("Enter the Contact First Name you want to Delete : ");
+            string deleteName = Console.ReadLine();
+
+            // Checking if the person that is currently active matched the person user wants to delete
+            if (!Person.FirstName.Equals(deleteName, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("Contact Not Matched\n");
+                return;
+            }
+
+            // Taking User confirmation before deleting the contact details.
+            Console.Write("Please Confirm that you want to delete the contact details [yes/no] : ");
+            string confirm = Console.ReadLine();
+
+            if( confirm == "yes" )
+            {
+                Person = null;
+                Console.WriteLine("Person Contact Info is Deleted");
+            }
+            else
+            {
+                Console.WriteLine("Exiting...\n");
+            }
+        }
     }
 }

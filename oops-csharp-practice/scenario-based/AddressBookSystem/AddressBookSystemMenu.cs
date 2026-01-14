@@ -19,6 +19,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
                 Console.WriteLine("Welcome To Address Book Program");
                 Console.WriteLine("1. Add New Conatct Details");
                 Console.WriteLine("2. Update Existing Conatct Details");
+                Console.WriteLine("3. Delete Existing Conatct");
                 Console.WriteLine("10. Exit The Program");
                 Console.Write("Enter Your Choice : ");
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -30,6 +31,9 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
                         break;
                     case 2:
                         contactsUtility.EditContact();
+                        break;
+                    case 3:
+                        contactsUtility.DeleteContact();
                         break;
                     case 10:
                         Console.WriteLine("Exiting The Address Book System");

@@ -13,8 +13,9 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         /// UC-1 : We have made a encapsulated Contacts class that have all the contacts fields.
         /// UC-2 : We Add A Method To allow addition of a new contact by the user.
         /// UC-3 : We Add A Method That allows for a user to update a contact info
+        /// UC-4 : We Add A Method That allows users to delete a conatct.
         /// 
-        /// version - 1.3
+        /// version - 1.4
         /// </summary>
         static void Main(string[] args)
         {
