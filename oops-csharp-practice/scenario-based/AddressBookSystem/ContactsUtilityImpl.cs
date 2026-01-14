@@ -7,12 +7,39 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
     // Utility Class Contains All The Contacts Related Functions And Their Implementation
     internal class ContactsUtilityImpl : IContacts
     {
-        // Contact Object Person That is Private to secure the persons details
-        private Contacts Person;
+        // Creating An Contacts Array To Store Multiple Contacts 
+        private Contacts[] Persons;
+        // Creating An Index variable To Iterate Through the Contracts Array and Know Their Count
+        //private int contactIdx = 0;
+
 
         // Add Contact Person To Add a new Contact in the system
         public void AddContact()
         {
+            // Checking if Persons Array is empty or not. If Empty then need to initialize it first
+            if (Persons == null)
+            {
+                Console.WriteLine("No Contact Details Enteres yet!\n");
+                return;
+            }
+
+            // Check if address book is completely full
+            bool hasSpace = false;
+            for (int i = 0; i < Persons.Length; i++)
+            {
+                if (Persons[i] == null)
+                {
+                    hasSpace = true;
+                    break;
+                }
+            }
+
+            if (!hasSpace)
+            {
+                Console.WriteLine("Address Book is full.");
+                return;
+            }
+
             // Creating an temporary object to get details from the user
             Contacts newContact = new Contacts();
 
@@ -34,30 +61,31 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             Console.Write("Enter Your Email : ");
             newContact.Email = Console.ReadLine();
 
-            Person = newContact;
-            Console.WriteLine("New Person Contacts Details Add Successfully\n");
-
+            // Insert into FIRST available (null) slot
+            for (int i = 0; i < Persons.Length; i++)
+            {
+                if (Persons[i] == null)
+                {
+                    Persons[i] = newContact;
+                    Console.WriteLine("Contact Added Successfully.");
+                    return;
+                }
+            }
         }
 
         // UC-3 Edit Contact Method to add a edit a contact based on the user name input
         public void EditContact()
         {
             // Checking if there is any active contact in the system or not
-            if(Person == null)
+            if(Persons == null)
             {
                 Console.WriteLine("No Contact Details Enteres yet!\n");
                 return;
             }
 
-            Console.Write("Enter the Contact First Name you want to edit : ");
-            string editName = Console.ReadLine();
-
-            // Checking if the person that is currently active matched the person user wants to edit or update
-            if(!Person.FirstName.Equals(editName,StringComparison.OrdinalIgnoreCase))
-            {
-                Console.WriteLine("Contact Not Matched\n");
-                return;
-            }
+            // Finding The Index Or the Contact We Want to Edit
+            int editContactIdx = SearchContact();
+            if (editContactIdx == -1) return;
 
             //Creating a temporary object to store the update details
             Contacts updateContact = new Contacts();
@@ -80,29 +108,23 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             Console.Write("Enter Your Email : ");
             updateContact.Email = Console.ReadLine();
 
-            Person = updateContact;
-            Console.WriteLine($"Person {Person.FirstName} Data is Updated\n");
+            Persons[editContactIdx] = updateContact;
+            Console.WriteLine($"Person {Persons[editContactIdx].FirstName} Data is Updated\n");
 
         }
 
         // UC-4 To Delete A Contact Details and It Form the Address Book
         public void DeleteContact()
         {
-            if (Person == null)
+            if (Persons == null)
             {
                 Console.WriteLine("No Contact Details Enteres yet!\n");
                 return;
             }
-
-            Console.Write("Enter the Contact First Name you want to Delete : ");
-            string deleteName = Console.ReadLine();
-
-            // Checking if the person that is currently active matched the person user wants to delete
-            if (!Person.FirstName.Equals(deleteName, StringComparison.OrdinalIgnoreCase))
-            {
-                Console.WriteLine("Contact Not Matched\n");
-                return;
-            }
+            
+            // Finding The Index Of the Contact we want to delete
+            int deleteContactIdx = SearchContact();
+            if (deleteContactIdx == -1) return;
 
             // Taking User confirmation before deleting the contact details.
             Console.Write("Please Confirm that you want to delete the contact details [yes/no] : ");
@@ -110,13 +132,59 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
 
             if( confirm == "yes" )
             {
-                Person = null;
+                Persons[deleteContactIdx] = null;
                 Console.WriteLine("Person Contact Info is Deleted");
             }
             else
             {
                 Console.WriteLine("Exiting...\n");
             }
+        }
+
+        // UC-5 Creating A Method That Initializes The Contacts Array That Helps in Storing Multiple Contacts info
+        public void MultipleContacts()
+        {
+            if(Persons != null)
+            {
+                Console.WriteLine("Address Book already exists.");
+                return;
+            }
+
+            Console.Write("Enter Address Book Size : ");
+            int size = Convert.ToInt32(Console.ReadLine());
+
+            if (size <= 0)
+            {
+                Console.WriteLine("Invalid Size.");
+                return;
+            }
+
+            Persons = new Contacts[size];
+            Console.WriteLine("Address Book Created Successfully.");
+        }
+
+        // Helper Function To help in Finding Our Contact in the array
+        public int SearchContact()
+        {
+            // Checking If A Address Book Is Initialized or Not
+            if(Persons == null)
+            {
+                Console.WriteLine("No Address Book is Initialized yet.");
+                return  -1;
+            }
+
+            Console.Write("Enter the name you want to edit or delete : ");
+            string searchName = Console.ReadLine();
+
+            for(int i = 0; i < Persons.Length; i++)
+            {
+                if (Persons[i] != null && Persons[i].FirstName.Equals(searchName, StringComparison.OrdinalIgnoreCase))
+                {
+                    return i;
+                }
+            }
+            Console.WriteLine("Contact Not Found");
+            return -1;
         }
     }
 }

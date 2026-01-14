@@ -14,8 +14,9 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         /// UC-2 : We Add A Method To allow addition of a new contact by the user.
         /// UC-3 : We Add A Method That allows for a user to update a contact info
         /// UC-4 : We Add A Method That allows users to delete a conatct.
+        /// UC-5 : We Add A Method That Allows The user To Initialize the Size of the Contacts Array to help in multiple contacts storage
         /// 
-        /// version - 1.4
+        /// version - 1.5
         /// </summary>
         static void Main(string[] args)
         {
