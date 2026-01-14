@@ -51,6 +51,16 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             newContact.FirstName = Console.ReadLine();
             Console.Write("Enter Your Last Name : ");
             newContact.LastName = Console.ReadLine();
+
+            //UC-7 Checking if Person With Same Name Exists Or Not
+            int foundIdx = SearchContact(newContact.FirstName, newContact.LastName);
+
+            if (foundIdx != -1)
+            {
+                Console.WriteLine("Person Already Exists In the Address Book. Look For Update Details");
+                return;
+            }
+
             Console.Write("Enter Your Address : ");
             newContact.Address = Console.ReadLine();
             Console.Write("Enter Your City : ");
@@ -80,7 +90,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         public void EditContact()
         {
             // Checking if there is any active contact in the system or not
-            if (currentAddressBook.Contacts == null)
+            if (IsAddressBookEmpty())
             {
                 Console.WriteLine("No Address Book Details Found yet!\n");
                 return;
@@ -119,7 +129,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         // UC-4 To Delete A Contact Details and It Form the Address Book
         public void DeleteContact()
         {
-            if (currentAddressBook.Contacts == null)
+            if (IsAddressBookEmpty())
             {
                 Console.WriteLine("No Contact Details Enteres yet!\n");
                 return;
@@ -145,7 +155,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         }
 
         // Helper Function To help in Finding Our Contact in the array
-        public int SearchContact()
+        private int SearchContact()
         {
             // Checking If A Address Book Is Initialized or Not
             if (currentAddressBook.Contacts == null)
@@ -166,6 +176,36 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             }
             Console.WriteLine("Contact Not Found");
             return -1;
+        }
+
+        // Helper Method to Search By Name and Returning the Corresponding Index
+        private int SearchContact(string FirstName, string LastName)
+        {
+            // Searching data in contacts array
+            for (int i = 0; i < currentAddressBook.Contacts.Length; i++)
+            {
+                if (currentAddressBook.Contacts[i] != null)
+                {
+                    if (currentAddressBook.Contacts[i].FirstName.Equals(FirstName, StringComparison.OrdinalIgnoreCase)
+                        && currentAddressBook.Contacts[i].LastName.Equals(LastName, StringComparison.OrdinalIgnoreCase))
+                    {
+                        return i;
+                    }
+                }
+            }
+
+            return -1;
+        }
+
+        // Helper Method to check if Address Book Is Empty or Not
+        private bool IsAddressBookEmpty()
+        {
+            foreach (Contacts contact in currentAddressBook.Contacts)
+            {
+                if (contact != null)
+                    return false;
+            }
+            return true;
         }
     }
 }

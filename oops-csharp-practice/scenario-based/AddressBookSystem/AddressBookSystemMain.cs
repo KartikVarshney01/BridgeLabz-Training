@@ -17,8 +17,10 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         /// UC-5 : We Add A Method That Allows The user To Initialize the Size of the Contacts Array to help in multiple contacts storage
         /// UC-6  : We Added A Address Book Class, Address Book Interface And Address Book Utility And Modified Contacts Utility And
         ///         AddressBookSystemMenu
-        ///         
-        /// version - 1.6
+        /// UC-7 : We Add A new Functionality in the Add Contact where it searches for if there is already a person or contact exists with 
+        ///        the same name or not.
+        ///        
+        /// version - 1.7
         /// </summary>
         static void Main(string[] args)
         {

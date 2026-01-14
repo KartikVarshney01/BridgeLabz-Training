@@ -30,6 +30,12 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
 
             Console.Write("Enter the Capacity of this Address Book : ");
             int capacity = Convert.ToInt32(Console.ReadLine());
+            
+            if (capacity <= 0)
+            {
+                Console.WriteLine("Invalid capacity.");
+                return;
+            }
 
             // Assigning Contacts With Capacity and initializing the Contacts Array
             addressBook.Contacts = new Contacts[capacity];
