@@ -14,7 +14,12 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         public string City { get; set; }
         public string State { get; set; }
         public int Zip {  get; set; }
-        public int PhoneNumber { get; set; }
+        public long PhoneNumber { get; set; }
         public string Email { get; set; }
+
+        //public override string ToString()
+        //{
+        //    return $"{FirstName} || {LastName} || {Address} || {City} || {State} || {Zip} || {PhoneNumber} || {Email}";
+        //}
     }
 }
