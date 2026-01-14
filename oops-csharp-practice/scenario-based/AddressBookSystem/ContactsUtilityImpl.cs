@@ -7,27 +7,30 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
     // Utility Class Contains All The Contacts Related Functions And Their Implementation
     internal class ContactsUtilityImpl : IContacts
     {
-        // Creating An Contacts Array To Store Multiple Contacts 
-        private Contacts[] Persons;
-        // Creating An Index variable To Iterate Through the Contracts Array and Know Their Count
-        //private int contactIdx = 0;
+        // Private Reference For the current address book class
+        private AddressBook currentAddressBook;
 
+        // Constructor to initialize the address book reference
+        public ContactsUtilityImpl(AddressBook AddressBook)
+        {
+            currentAddressBook = AddressBook;
+        }
 
         // Add Contact Person To Add a new Contact in the system
         public void AddContact()
         {
-            // Checking if Persons Array is empty or not. If Empty then need to initialize it first
-            if (Persons == null)
+            // Checking if Contacts Array of the current Address Book is initialized or not. if not initializing it.
+            if (currentAddressBook.Contacts == null)
             {
-                Console.WriteLine("No Contact Details Enteres yet!\n");
+                Console.WriteLine("No Address Book Found yet!\n");
                 return;
             }
 
             // Check if address book is completely full
             bool hasSpace = false;
-            for (int i = 0; i < Persons.Length; i++)
+            for (int i = 0; i < currentAddressBook.Contacts.Length; i++)
             {
-                if (Persons[i] == null)
+                if (currentAddressBook.Contacts[i] == null)
                 {
                     hasSpace = true;
                     break;
@@ -62,11 +65,11 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             newContact.Email = Console.ReadLine();
 
             // Insert into FIRST available (null) slot
-            for (int i = 0; i < Persons.Length; i++)
+            for (int i = 0; i < currentAddressBook.Contacts.Length; i++)
             {
-                if (Persons[i] == null)
+                if (currentAddressBook.Contacts[i] == null)
                 {
-                    Persons[i] = newContact;
+                    currentAddressBook.Contacts[i] = newContact;
                     Console.WriteLine("Contact Added Successfully.");
                     return;
                 }
@@ -77,9 +80,9 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         public void EditContact()
         {
             // Checking if there is any active contact in the system or not
-            if(Persons == null)
+            if (currentAddressBook.Contacts == null)
             {
-                Console.WriteLine("No Contact Details Enteres yet!\n");
+                Console.WriteLine("No Address Book Details Found yet!\n");
                 return;
             }
 
@@ -108,20 +111,20 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             Console.Write("Enter Your Email : ");
             updateContact.Email = Console.ReadLine();
 
-            Persons[editContactIdx] = updateContact;
-            Console.WriteLine($"Person {Persons[editContactIdx].FirstName} Data is Updated\n");
+            currentAddressBook.Contacts[editContactIdx] = updateContact;
+            Console.WriteLine($"Person {currentAddressBook.Contacts[editContactIdx].FirstName} Data is Updated\n");
 
         }
 
         // UC-4 To Delete A Contact Details and It Form the Address Book
         public void DeleteContact()
         {
-            if (Persons == null)
+            if (currentAddressBook.Contacts == null)
             {
                 Console.WriteLine("No Contact Details Enteres yet!\n");
                 return;
             }
-            
+
             // Finding The Index Of the Contact we want to delete
             int deleteContactIdx = SearchContact();
             if (deleteContactIdx == -1) return;
@@ -130,9 +133,9 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             Console.Write("Please Confirm that you want to delete the contact details [yes/no] : ");
             string confirm = Console.ReadLine();
 
-            if( confirm == "yes" )
+            if (confirm == "yes" || confirm == "Yes")
             {
-                Persons[deleteContactIdx] = null;
+                currentAddressBook.Contacts[deleteContactIdx] = null;
                 Console.WriteLine("Person Contact Info is Deleted");
             }
             else
@@ -141,44 +144,22 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             }
         }
 
-        // UC-5 Creating A Method That Initializes The Contacts Array That Helps in Storing Multiple Contacts info
-        public void MultipleContacts()
-        {
-            if(Persons != null)
-            {
-                Console.WriteLine("Address Book already exists.");
-                return;
-            }
-
-            Console.Write("Enter Address Book Size : ");
-            int size = Convert.ToInt32(Console.ReadLine());
-
-            if (size <= 0)
-            {
-                Console.WriteLine("Invalid Size.");
-                return;
-            }
-
-            Persons = new Contacts[size];
-            Console.WriteLine("Address Book Created Successfully.");
-        }
-
         // Helper Function To help in Finding Our Contact in the array
         public int SearchContact()
         {
             // Checking If A Address Book Is Initialized or Not
-            if(Persons == null)
+            if (currentAddressBook.Contacts == null)
             {
                 Console.WriteLine("No Address Book is Initialized yet.");
-                return  -1;
+                return -1;
             }
 
             Console.Write("Enter the name you want to edit or delete : ");
             string searchName = Console.ReadLine();
 
-            for(int i = 0; i < Persons.Length; i++)
+            for (int i = 0; i < currentAddressBook.Contacts.Length; i++)
             {
-                if (Persons[i] != null && Persons[i].FirstName.Equals(searchName, StringComparison.OrdinalIgnoreCase))
+                if (currentAddressBook.Contacts[i] != null && currentAddressBook.Contacts[i].FirstName.Equals(searchName, StringComparison.OrdinalIgnoreCase))
                 {
                     return i;
                 }

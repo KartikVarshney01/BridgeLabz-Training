@@ -16,7 +16,5 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         // UC-4
         void DeleteContact();
 
-        // UC-5
-        void MultipleContacts();
     }
 }
