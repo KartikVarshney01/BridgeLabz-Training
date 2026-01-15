@@ -229,10 +229,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
 
         private void DisplayInfo(Contacts contact)
         {
-            Console.WriteLine(
-                $"Name : {contact.FirstName} {contact.LastName}" +
-                $"Address : {contact.Address} " +
-                $"City : {contact.City} || State : {contact.State}");
+            Console.WriteLine(contact);
         }
     }
 }

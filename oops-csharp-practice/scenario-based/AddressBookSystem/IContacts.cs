@@ -17,7 +17,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         void DeleteContact();
 
         // UC-11
-        //void SortByName();
+        void SortByName();
 
     }
 }

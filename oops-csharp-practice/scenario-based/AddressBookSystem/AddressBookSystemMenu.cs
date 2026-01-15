@@ -86,9 +86,9 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
                     case 3:
                         contactsUtility.DeleteContact();
                         break;
-                    //case 4:
-                    //    contactsUtility.SortByName();
-                    //    break;
+                    case 4:
+                        contactsUtility.SortByName();
+                        break;
                     case 5:
                         Console.WriteLine("Returning To The Address Book Menu");
                         return;
