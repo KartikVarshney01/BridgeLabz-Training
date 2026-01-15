@@ -24,7 +24,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
                 Console.WriteLine("====Address Book Menu====");
                 Console.WriteLine("\n1: Add New Address Book");
                 Console.WriteLine("2: Select Address Book");
-                Console.WriteLine("3: Exit Address Book System\n");
+                Console.WriteLine("3. Search By City Or State");
+                Console.WriteLine("4: Exit Address Book System\n");
 
                 Console.Write("Enter Your Choise: ");
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -43,6 +44,9 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
                         }
                         break;
                     case 3:
+                        addressBookUtility.SearchByCityOrState();
+                        break;
+                    case 4:
                         Console.WriteLine("Exiting Address Book System...\n");
                         return;
                     default:

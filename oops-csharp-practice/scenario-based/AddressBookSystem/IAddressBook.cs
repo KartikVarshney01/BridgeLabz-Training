@@ -13,5 +13,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         // To Select a Existing Address Book
         AddressBook SelectAddressBook();
 
+        // To Search for persons by city or state
+        void SearchByCityOrState();
+
     }
 }

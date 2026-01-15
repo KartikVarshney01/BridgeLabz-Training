@@ -19,8 +19,9 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         ///         AddressBookSystemMenu
         /// UC-7 : We Add A new Functionality in the Add Contact where it searches for if there is already a person or contact exists with 
         ///        the same name or not.
-        ///        
-        /// version - 1.7
+        /// UC-8 : We Add The Functionality To Search The COntacts or Persons By The City Or State Among All Address Books        
+        ///
+        /// version - 1.8
         /// </summary>
         static void Main(string[] args)
         {
