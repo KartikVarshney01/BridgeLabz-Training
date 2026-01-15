@@ -21,8 +21,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             // infintie While Loop - Address Book Menu
             while (true)
             {
-                Console.WriteLine("====Address Book Menu====");
-                Console.WriteLine("\n1: Add New Address Book");
+                Console.WriteLine("\n====Address Book Menu====");
+                Console.WriteLine("1: Add New Address Book");
                 Console.WriteLine("2: Select Address Book");
                 Console.WriteLine("3. Search By City Or State");
                 Console.WriteLine("4: Exit Address Book System\n");
@@ -57,7 +57,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
 
         private void ContactMenu(AddressBook selectedBook)
         {
-            contactsUtility = new ContactsUtilityImpl(selectedBook);
+            contactsUtility = new ContactsUtilityImpl(selectedBook,(AddressBookUtilityImpl)addressBookUtility);
 
             // Infinite Loop - Contact Menu
             while (true)

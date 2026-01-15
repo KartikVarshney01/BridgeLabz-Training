@@ -7,13 +7,17 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
     // Utility Class Contains All The Contacts Related Functions And Their Implementation
     internal class ContactsUtilityImpl : IContacts
     {
+        // Address Book Utility Reference
+        private AddressBookUtilityImpl addressUtility;
+
         // Private Reference For the current address book class
         private AddressBook currentAddressBook;
 
         // Constructor to initialize the address book reference
-        public ContactsUtilityImpl(AddressBook AddressBook)
+        public ContactsUtilityImpl(AddressBook AddressBook, AddressBookUtilityImpl addressBookUtility)
         {
             currentAddressBook = AddressBook;
+            this.addressUtility = addressBookUtility;
         }
 
         // Add Contact Person To Add a new Contact in the system
@@ -81,9 +85,28 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
                 {
                     currentAddressBook.Contacts[i] = newContact;
                     Console.WriteLine("Contact Added Successfully.");
-                    return;
+                    break;
                 }
             }
+
+            // UC - 9
+            // Adding the Contacts into the city-person and state-person dictionary 
+            // City 
+            // If city data does not contains the city create a new key-value pair
+            if (!addressUtility.cityData.ContainsKey(newContact.City))
+            {
+                addressUtility.cityData[newContact.City] = new LinkedList<Contacts>();
+            }
+            // Adding contact in dictionary
+            addressUtility.cityData[newContact.City].AddLast(newContact);
+
+            // State
+            // If state data does not contains the state create a new key-value pair
+            if (!addressUtility.stateData.ContainsKey(newContact.State))
+            {
+                addressUtility.stateData[newContact.State] = new LinkedList<Contacts>();
+            }
+            addressUtility.stateData[newContact.State].AddLast(newContact);
         }
 
         // UC-3 Edit Contact Method to add a edit a contact based on the user name input
@@ -121,8 +144,44 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             Console.Write("Enter Your Email : ");
             updateContact.Email = Console.ReadLine();
 
+            Contacts oldContact = currentAddressBook.Contacts[editContactIdx];
+
             currentAddressBook.Contacts[editContactIdx] = updateContact;
             Console.WriteLine($"Person {currentAddressBook.Contacts[editContactIdx].FirstName} Data is Updated\n");
+
+            // remove old city entry
+            if (addressUtility.cityData.ContainsKey(oldContact.City))
+            {
+                addressUtility.cityData[oldContact.City].Remove(oldContact);
+
+                if (addressUtility.cityData[oldContact.City].Count == 0)
+                    addressUtility.cityData.Remove(oldContact.City);
+            }
+
+            // remove old state entry
+            if (addressUtility.stateData.ContainsKey(oldContact.State))
+            {
+                addressUtility.stateData[oldContact.State].Remove(oldContact);
+
+                if (addressUtility.stateData[oldContact.State].Count == 0)
+                    addressUtility.stateData.Remove(oldContact.State);
+            }
+
+            // add updated city entry
+            if (!addressUtility.cityData.ContainsKey(updateContact.City))
+            {
+                addressUtility.cityData[updateContact.City] = new LinkedList<Contacts>();
+            }
+            addressUtility.cityData[updateContact.City].AddLast(updateContact);
+
+            // add updated state entry
+            if (!addressUtility.stateData.ContainsKey(updateContact.State))
+            {
+                addressUtility.stateData[updateContact.State] = new LinkedList<Contacts>();
+            }
+            addressUtility.stateData[updateContact.State].AddLast(updateContact);
+
+
 
         }
 
@@ -139,18 +198,34 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             int deleteContactIdx = SearchContact();
             if (deleteContactIdx == -1) return;
 
+            Contacts deleteContact = currentAddressBook.Contacts[deleteContactIdx];
+
             // Taking User confirmation before deleting the contact details.
             Console.Write("Please Confirm that you want to delete the contact details [yes/no] : ");
             string confirm = Console.ReadLine();
 
-            if (confirm == "yes" || confirm == "Yes")
-            {
-                currentAddressBook.Contacts[deleteContactIdx] = null;
-                Console.WriteLine("Person Contact Info is Deleted");
-            }
-            else
+            if (!(confirm == "yes" || confirm == "Yes"))
             {
                 Console.WriteLine("Exiting...\n");
+                return;
+            }
+
+            // remove from city dictionary
+            if (addressUtility.cityData.ContainsKey(deleteContact.City))
+            {
+                addressUtility.cityData[deleteContact.City].Remove(deleteContact);
+
+                if (addressUtility.cityData[deleteContact.City].Count == 0)
+                    addressUtility.cityData.Remove(deleteContact.City);
+            }
+
+            // remove from state dictionary
+            if (addressUtility.stateData.ContainsKey(deleteContact.State))
+            {
+                addressUtility.stateData[deleteContact.State].Remove(deleteContact);
+
+                if (addressUtility.stateData[deleteContact.State].Count == 0)
+                    addressUtility.stateData.Remove(deleteContact.State);
             }
         }
 

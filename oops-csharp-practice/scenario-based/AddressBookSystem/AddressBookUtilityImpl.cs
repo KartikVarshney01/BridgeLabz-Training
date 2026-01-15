@@ -9,6 +9,12 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         // Dictionary To Store All AddressBooks Reference Data With key: Address Book Name
         Dictionary<string, AddressBook> addressData = new Dictionary<string, AddressBook>();
 
+        // Dictionary To Store All Persons By City
+        internal Dictionary<string,LinkedList<Contacts>> cityData = new Dictionary<string, LinkedList<Contacts>>();
+
+        // Dictionary To Store All Persons By State
+        internal Dictionary<string,LinkedList<Contacts>> stateData = new Dictionary<string, LinkedList<Contacts>>();
+
         // Method to Add Address Book In the Dictionary
         public void AddAddressBook()
         {
@@ -127,26 +133,17 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             Console.Write("Enter City Name To Start The Search : ");
             string city = Console.ReadLine();
 
-            Console.WriteLine("\n Persons List Based On City \n");
+            Console.WriteLine("\n Contact List Based On City \n");
 
-            // Accessing Address Books 
-            foreach(string bookName in addressData.Keys)
+            if (!cityData.ContainsKey(city))
             {
-                AddressBook book = addressData[bookName];
-                Console.WriteLine($"Data From Address Book : {bookName}");
+                Console.WriteLine("City Data is Empty.");
+                return;
+            }
 
-                // Bool Variable to check if any data is found or not
-                bool isFound = false;
-
-                for(int i = 0; i < book.Contacts.Length; i++)
-                {
-                    if(book.Contacts[i] != null && book.Contacts[i].City.Equals(city, StringComparison.OrdinalIgnoreCase))
-                    {
-                        DisplayInfo(book.Contacts[i]);
-                        isFound = true;
-                    }
-                }
-                if(!isFound) Console.WriteLine("No Data Found In The Current Address Book");
+            foreach(Contacts contact in cityData[city])
+            {
+                DisplayInfo(contact);
             }
         }
 
@@ -158,24 +155,15 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
 
             Console.WriteLine("\n Persons List Based On State \n");
 
-            // Accessing Address Books 
-            foreach (string bookName in addressData.Keys)
+            if (!stateData.ContainsKey(state))
             {
-                AddressBook book = addressData[bookName];
-                Console.WriteLine($"Data From Address Book : {bookName}");
+                Console.WriteLine("State Data is Empty.");
+                return;
+            }
 
-                // Bool Variable to check if any data is found or not
-                bool isFound = false;
-
-                for (int i = 0; i < book.Contacts.Length; i++)
-                {
-                    if (book.Contacts[i] != null && book.Contacts[i].State.Equals(state, StringComparison.OrdinalIgnoreCase))
-                    {
-                        DisplayInfo(book.Contacts[i]);
-                        isFound = true;
-                    }
-                }
-                if (!isFound) Console.WriteLine("No Data Found In The Current Address Book");
+            foreach (Contacts contact in stateData[state])
+            {
+                DisplayInfo(contact);
             }
         }
 
