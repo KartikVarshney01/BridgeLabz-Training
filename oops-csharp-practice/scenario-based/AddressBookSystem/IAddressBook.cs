@@ -16,5 +16,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         // To Search for persons by city or state
         void SearchByCityOrState();
 
+        // To Count for persons in city or state
+        void CountByCityOrState();
     }
 }

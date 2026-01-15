@@ -10,15 +10,15 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         Dictionary<string, AddressBook> addressData = new Dictionary<string, AddressBook>();
 
         // Dictionary To Store All Persons By City
-        internal Dictionary<string,LinkedList<Contacts>> cityData = new Dictionary<string, LinkedList<Contacts>>();
+        internal Dictionary<string, LinkedList<Contacts>> cityData = new Dictionary<string, LinkedList<Contacts>>();
 
         // Dictionary To Store All Persons By State
-        internal Dictionary<string,LinkedList<Contacts>> stateData = new Dictionary<string, LinkedList<Contacts>>();
+        internal Dictionary<string, LinkedList<Contacts>> stateData = new Dictionary<string, LinkedList<Contacts>>();
 
         // Method to Add Address Book In the Dictionary
         public void AddAddressBook()
         {
-            Console.WriteLine("Creating New Address Book"); 
+            Console.WriteLine("Creating New Address Book");
 
             Console.Write("Enter the Address Book Name : ");
             string name = Console.ReadLine();
@@ -36,7 +36,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
 
             Console.Write("Enter the Capacity of this Address Book : ");
             int capacity = Convert.ToInt32(Console.ReadLine());
-            
+
             if (capacity <= 0)
             {
                 Console.WriteLine("Invalid capacity.");
@@ -98,13 +98,13 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         // Method To Search For Persons By City Or State
         public void SearchByCityOrState()
         {
-            if(addressData.Count == 0)
+            if (addressData.Count == 0)
             {
                 Console.WriteLine("No Address Book Currently Available");
                 return;
             }
 
-            while(true)
+            while (true)
             {
                 Console.WriteLine("Search By City Or State [1. City, 2. State, 3.Exit]");
                 Console.Write("Enter Your Choice : ");
@@ -117,6 +117,38 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
                         return;
                     case 2:
                         SearchByState();
+                        return;
+                    case 3:
+                        Console.WriteLine("Returning");
+                        return;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        // Method To Count For Persons By City Or State
+        public void CountByCityOrState()
+        {
+            if (addressData.Count == 0)
+            {
+                Console.WriteLine("No Address Book Currently Available");
+                return;
+            }
+
+            while (true)
+            {
+                Console.WriteLine("Count By City Or State [1. City, 2. State, 3.Exit]");
+                Console.Write("Enter Your Choice : ");
+                int choice = Convert.ToInt32(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        CountByCity();
+                        return;
+                    case 2:
+                        CountByState();
                         return;
                     case 3:
                         Console.WriteLine("Returning");
@@ -141,7 +173,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
                 return;
             }
 
-            foreach(Contacts contact in cityData[city])
+            foreach (Contacts contact in cityData[city])
             {
                 DisplayInfo(contact);
             }
@@ -165,6 +197,34 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             {
                 DisplayInfo(contact);
             }
+        }
+
+        // Private Helper Function To help with counting the persons in city.
+        private void CountByCity()
+        {
+            Console.Write("Enter The Name of the City : ");
+            string city = Console.ReadLine();
+
+            if (!cityData.ContainsKey(city))
+            {
+                Console.WriteLine("City Data not Found");
+                return;
+            }
+            Console.WriteLine($"The Number Of Persons in City {city} : {cityData[city].Count}");
+        }
+
+        // Private Helper Function To help in counting the persons in state
+        private void CountByState()
+        {
+            Console.Write("Enter The Name of the State : ");
+            string state = Console.ReadLine();
+
+            if (!stateData.ContainsKey(state))
+            {
+                Console.WriteLine("State Data not Found");
+                return;
+            }
+            Console.WriteLine($"The Number Of Persons in State {state} : {stateData[state].Count}");
         }
 
         private void DisplayInfo(Contacts contact)

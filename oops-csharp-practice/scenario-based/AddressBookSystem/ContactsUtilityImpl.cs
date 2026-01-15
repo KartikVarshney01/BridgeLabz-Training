@@ -229,6 +229,37 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             }
         }
 
+        // UC - 11 Sorting The Contacts By Name
+        //public void SortByName()
+        //{
+        //    // Checking Empty Array
+        //    if (IsAddressBookEmpty())
+        //    {
+        //        Console.WriteLine("Address Book is Empty...");
+        //        return;
+        //    }
+
+        //    for (int i = 0; i < currentAddressBook.Contacts.Length - 1; i++)
+        //    {
+        //        for (int j = i + 1; j < currentAddressBook.Contacts.Length; j++)
+        //        {
+        //            if (currentAddressBook.Contacts[i] == null || currentAddressBook.Contacts[j] == null) continue;
+
+        //            string name1 = currentAddressBook.Contacts[i].FirstName + currentAddressBook.Contacts[i].LastName;
+        //            string name2 = currentAddressBook.Contacts[j].FirstName + currentAddressBook.Contacts[j].LastName;
+
+        //            if (string.Compare(name1, name2, StringComparison.OrdinalIgnoreCase) > 0)
+        //            {
+        //                Contacts temp = currentAddressBook.Contacts[i];
+        //                currentAddressBook.Contacts[i] = currentAddressBook.Contacts[j];
+        //                currentAddressBook.Contacts[j] = temp;
+        //            }
+        //        }
+        //    }
+
+        //    Console.WriteLine("Contacts sorted successfully by name.");
+        //}
+
         // Helper Function To help in Finding Our Contact in the array
         private int SearchContact()
         {

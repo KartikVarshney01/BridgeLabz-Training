@@ -25,7 +25,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
                 Console.WriteLine("1: Add New Address Book");
                 Console.WriteLine("2: Select Address Book");
                 Console.WriteLine("3. Search By City Or State");
-                Console.WriteLine("4: Exit Address Book System\n");
+                Console.WriteLine("4. Count By City Or State");
+                Console.WriteLine("5: Exit Address Book System\n");
 
                 Console.Write("Enter Your Choise: ");
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -47,6 +48,9 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
                         addressBookUtility.SearchByCityOrState();
                         break;
                     case 4:
+                        addressBookUtility.CountByCityOrState();
+                        break;
+                    case 5:
                         Console.WriteLine("Exiting Address Book System...\n");
                         return;
                     default:
@@ -57,7 +61,7 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
 
         private void ContactMenu(AddressBook selectedBook)
         {
-            contactsUtility = new ContactsUtilityImpl(selectedBook,(AddressBookUtilityImpl)addressBookUtility);
+            contactsUtility = new ContactsUtilityImpl(selectedBook, (AddressBookUtilityImpl)addressBookUtility);
 
             // Infinite Loop - Contact Menu
             while (true)
@@ -66,7 +70,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
                 Console.WriteLine("1. Add New Conatct Details");
                 Console.WriteLine("2. Update Existing Conatct Details");
                 Console.WriteLine("3. Delete Existing Conatct");
-                Console.WriteLine("4. Back To Address Book Menu\n");
+                Console.WriteLine("4. Sort By Name The Contacts");
+                Console.WriteLine("5. Back To Address Book Menu\n");
                 Console.Write("Enter Your Choice : ");
                 int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -81,7 +86,10 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
                     case 3:
                         contactsUtility.DeleteContact();
                         break;
-                    case 4:
+                    //case 4:
+                    //    contactsUtility.SortByName();
+                    //    break;
+                    case 5:
                         Console.WriteLine("Returning To The Address Book Menu");
                         return;
                     default:

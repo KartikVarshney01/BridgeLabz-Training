@@ -22,6 +22,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         /// UC-8 : We Add The Functionality To Search The COntacts or Persons By The City Or State Among All Address Books        
         /// UC-9 : We Add The Dictionary To Maintain A City-Person And A State-Person List for every new Contact. It Allows us to view All The 
         ///        Persons a specific city or state
+        /// UC-10 : We Add The Function To Count The Number of Persons in a City or State.
+        /// 
         /// 
         /// version - 1.9
         /// </summary>
