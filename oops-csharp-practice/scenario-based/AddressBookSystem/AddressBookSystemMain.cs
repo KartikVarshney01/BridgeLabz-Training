@@ -23,9 +23,10 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         /// UC-9 : We Add The Dictionary To Maintain A City-Person And A State-Person List for every new Contact. It Allows us to view All The 
         ///        Persons a specific city or state
         /// UC-10 : We Add The Function To Count The Number of Persons in a City or State.
-        /// Uc-11 : We Add The Functionality To Sort The Contacts In A Address Book.
+        /// Uc-11 : We Add The Functionality To Sort The Contacts In A Address Book With Name.
+        /// UC-12 : We Add The Functionality To Sort The Contacts In A Address Book By City, State And Zip
         /// 
-        /// version - 1.9
+        /// version - 1.12
         /// </summary>
         static void Main(string[] args)
         {

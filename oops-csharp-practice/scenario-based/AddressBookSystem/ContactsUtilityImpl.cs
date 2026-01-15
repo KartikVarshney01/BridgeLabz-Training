@@ -227,6 +227,8 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
                 if (addressUtility.stateData[deleteContact.State].Count == 0)
                     addressUtility.stateData.Remove(deleteContact.State);
             }
+            currentAddressBook.Contacts[deleteContactIdx] = null;
+            Console.WriteLine("Contact deleted successfully.");
         }
 
         // UC - 11 Sorting The Contacts By Name
@@ -261,6 +263,123 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
             Console.WriteLine("Contacts sorted successfully by name.");
 
             for(int i = 0; i < currentAddressBook.Contacts.Length; i++)
+            {
+                if (currentAddressBook.Contacts[i] != null)
+                {
+                    Console.WriteLine(currentAddressBook.Contacts[i]);
+                }
+            }
+        }
+
+        // UC-12 Sorting By City
+        public void SortByCity()
+        {
+            // Checking Empty Array
+            if (IsAddressBookEmpty())
+            {
+                Console.WriteLine("Address Book is Empty...");
+                return;
+            }
+
+            // Using Bubble Sort To Sort 
+            for (int i = 0; i < currentAddressBook.Contacts.Length - 1; i++)
+            {
+                for (int j = i + 1; j < currentAddressBook.Contacts.Length; j++)
+                {
+                    if (currentAddressBook.Contacts[i] == null || currentAddressBook.Contacts[j] == null) continue;
+
+                    string city1 = currentAddressBook.Contacts[i].City;
+                    string city2 = currentAddressBook.Contacts[j].City;
+
+                    if (string.Compare(city1, city2, StringComparison.OrdinalIgnoreCase) > 0)
+                    {
+                        Contacts temp = currentAddressBook.Contacts[i];
+                        currentAddressBook.Contacts[i] = currentAddressBook.Contacts[j];
+                        currentAddressBook.Contacts[j] = temp;
+                    }
+                }
+            }
+
+            Console.WriteLine("Contacts sorted successfully by City.");
+
+            for (int i = 0; i < currentAddressBook.Contacts.Length; i++)
+            {
+                if (currentAddressBook.Contacts[i] != null)
+                {
+                    Console.WriteLine(currentAddressBook.Contacts[i]);
+                }
+            }
+        }
+
+        // UC-12 Sorting By State
+        public void SortByState()
+        {
+            // Checking Empty Array
+            if (IsAddressBookEmpty())
+            {
+                Console.WriteLine("Address Book is Empty...");
+                return;
+            }
+
+            // Using Bubble Sort To Sort 
+            for (int i = 0; i < currentAddressBook.Contacts.Length - 1; i++)
+            {
+                for (int j = i + 1; j < currentAddressBook.Contacts.Length; j++)
+                {
+                    if (currentAddressBook.Contacts[i] == null || currentAddressBook.Contacts[j] == null) continue;
+
+                    string state1 = currentAddressBook.Contacts[i].State;
+                    string state2 = currentAddressBook.Contacts[j].State;
+
+                    if (string.Compare(state1, state2, StringComparison.OrdinalIgnoreCase) > 0)
+                    {
+                        Contacts temp = currentAddressBook.Contacts[i];
+                        currentAddressBook.Contacts[i] = currentAddressBook.Contacts[j];
+                        currentAddressBook.Contacts[j] = temp;
+                    }
+                }
+            }
+
+            Console.WriteLine("Contacts sorted successfully by State.");
+
+            for (int i = 0; i < currentAddressBook.Contacts.Length; i++)
+            {
+                if (currentAddressBook.Contacts[i] != null)
+                {
+                    Console.WriteLine(currentAddressBook.Contacts[i]);
+                }
+            }
+        }
+
+        // UC-12 Sorting By Zip
+        public void SortByZip()
+        {
+            // Checking Empty Array
+            if (IsAddressBookEmpty())
+            {
+                Console.WriteLine("Address Book is Empty...");
+                return;
+            }
+
+            // Using Bubble Sort To Sort 
+            for (int i = 0; i < currentAddressBook.Contacts.Length - 1; i++)
+            {
+                for (int j = i + 1; j < currentAddressBook.Contacts.Length; j++)
+                {
+                    if (currentAddressBook.Contacts[i] == null || currentAddressBook.Contacts[j] == null) continue;
+
+                    if (currentAddressBook.Contacts[i].Zip > currentAddressBook.Contacts[j].Zip)
+                    {
+                        Contacts temp = currentAddressBook.Contacts[i];
+                        currentAddressBook.Contacts[i] = currentAddressBook.Contacts[j];
+                        currentAddressBook.Contacts[j] = temp;
+                    }
+                }
+            }
+
+            Console.WriteLine("Contacts sorted successfully by Zip.");
+
+            for (int i = 0; i < currentAddressBook.Contacts.Length; i++)
             {
                 if (currentAddressBook.Contacts[i] != null)
                 {

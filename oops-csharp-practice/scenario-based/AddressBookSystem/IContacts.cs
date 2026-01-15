@@ -19,5 +19,10 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
         // UC-11
         void SortByName();
 
+        // UC-12
+        void SortByCity();
+        void SortByState();
+        void SortByZip();
+
     }
 }

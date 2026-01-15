@@ -19,10 +19,16 @@ namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.AddressBookSyst
 
         public override string ToString()
         {
-            return $"First Name : {FirstName} || Last Name : {LastName}" +
-                $"Address : {Address} || City : {City} || State : {State} " +
-                $"Zip : {Zip} || Phone Number : {PhoneNumber}" +
-                $"Email : {Email}";
+            return
+                "----------------------------------------\n" +
+                $"Name     : {FirstName} {LastName}\n" +
+                $"Address  : {Address}\n" +
+                $"City     : {City}\n" +
+                $"State    : {State}\n" +
+                $"Zip      : {Zip}\n" +
+                $"Phone    : {PhoneNumber}\n" +
+                $"Email    : {Email}\n" +
+                "----------------------------------------";
         }
     }
 }
