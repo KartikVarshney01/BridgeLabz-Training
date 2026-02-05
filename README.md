@@ -1051,11 +1051,7 @@ An ambulance rotates through units to find the nearest available one for patient
 
 ---
 
-# 🚀 BridgeLabz Training
-
----
-
-## 📅 Day 29 - 27 January 2026
+### 📅 Day 29 - 27 January 2026
 
 ### 🎯 Learning Goals
 - Learn **MSTest**
@@ -1134,10 +1130,6 @@ An ambulance rotates through units to find the nearest available one for patient
 - Learned CSV processing  
 - Applied Regex validation  
 - Practiced MSTest for correctness  
-
----
-
-# 🚀 BridgeLabz Training
 
 ---
 
