@@ -1050,3 +1050,290 @@ An ambulance rotates through units to find the nearest available one for patient
 - Built a strong foundation for advanced C# concepts  
 
 ---
+
+# 🚀 BridgeLabz Training
+
+---
+
+## 📅 Day 29 - 27 January 2026
+
+### 🎯 Learning Goals
+- Learn **MSTest**
+- Use **Annotations & Reflection**
+- Generate structured **JSON output**
+
+### 🧪 Topic: MSTest
+- Basics of unit testing  
+- Test methods, assertions  
+- Importance of automated testing  
+
+### 🏥 HealthCheckPro – API Metadata Validator
+
+### 🧩 Concepts
+- Custom annotations  
+- Reflection  
+- Auto documentation  
+
+### ⚙️ Features
+- Scan controllers for annotations  
+- Detect missing metadata  
+- Generate API docs  
+
+### 📊 EventTracker – Auto Audit System
+
+### 🧩 Concepts
+- Annotations  
+- Reflection  
+- JSON logging  
+
+### ⚙️ Features
+- Detect `@AuditTrail` methods  
+- Generate JSON audit logs  
+- Include timestamps & metadata  
+
+### 🚀 Outcome
+- Learned **MSTest**
+- Built metadata-driven tools using reflection
+- Improved understanding of enterprise systems  
+
+---
+
+### 📅 Day 30 - 28 January 2026
+
+### 🎯 Learning Goals
+- Learn **CSV data handling**
+- Use **Regex** for validation
+- Perform testing with **MSTest**
+
+### 📚 Topic: CSV Handling
+- Read & parse CSV files  
+- Validate structured data  
+
+### ✈️ AeroVigil – Flight Validation
+
+### 🧩 Concepts
+- **Regex**  
+- Conditional logic  
+
+### ⚙️ Features
+- Validate flight ticket number  
+- Confirm flight  
+- Calculate fuel  
+
+### 🏦 Bank Account Validation
+
+### 🧩 Concepts
+- **MSTest**
+- Business rule testing  
+
+### ⚙️ Features
+- Validate account rules  
+- Unit testing with MSTest  
+
+### 🚀 Outcome
+- Learned CSV processing  
+- Applied Regex validation  
+- Practiced MSTest for correctness  
+
+---
+
+# 🚀 BridgeLabz Training
+
+---
+
+### 📅 Day 31 - 29 January 2026
+
+### 🎯 Learning Goals
+- Learn **JSON data concepts** in C#
+- Understand structured data representation
+- Solve scenario-based problems using core logic  
+
+### 📚 Topic: JSON Data
+- JSON structure (objects & arrays)  
+- Use cases in real-world applications  
+- Mapping data conceptually to objects  
+
+### 🎥 StreamBuzz – Creator Analytics
+
+### 🧩 Scenario
+A content platform tracks **likes of creators over 4 weeks** to analyze performance.
+
+### 🧩 Concepts Used
+- Classes & arrays  
+- Aggregation logic  
+
+### ⚙️ Features
+- Store weekly likes for creators  
+- Calculate **average likes**  
+- Identify **top creator**  
+
+### 🧠 Takeaways
+- Aggregation helps analyze trends  
+- Simple data structures can model analytics  
+
+### 🚢 OceanFleet – Vessel Data System
+
+### 🧩 Scenario
+A fleet management system maintains **vessel and operational data**.
+
+### 🧩 Concepts Used
+- Classes  
+- Structured data handling  
+
+### ⚙️ Features
+- Store vessel details  
+- Display and manage fleet data  
+
+### 🧠 Takeaways
+- Structured design improves clarity  
+- Scenarios can evolve to JSON-based systems later  
+
+### 🚀 Outcome
+- Learned **JSON concepts**  
+- Built analytics and data systems without JSON  
+- Strengthened understanding of structured data modeling  
+
+---
+
+### 📅 Day 32 - 30 January 2026
+
+### 🎯 Learning Goals
+- Practice **string manipulation**
+- Understand **inheritance & polymorphism**
+- Apply OOP concepts through scenarios
+
+### 🔤 Lexical Twist – String Reversal Check
+
+### 🧩 Concepts
+- Strings  
+- Conditional logic  
+- String manipulation  
+
+### ⚙️ Features
+- Accept two strings from user  
+- Check if strings are **reverse of each other**  
+- Perform manipulation if condition is true  
+
+### 🚚 Future Logistics – Transport Cost Calculator
+
+### 🧩 Concepts
+- **Inheritance**
+- **Polymorphism**
+- Method overriding  
+
+### ⚙️ Features
+- Parent class: `GoodsTransport`  
+- Child classes: `TimberTransport`, `BrickTransport`  
+- Accept user transport details  
+- Calculate **transport time & cost** using polymorphism  
+
+## 🚀 Outcome
+- Strengthened string-handling logic  
+- Applied polymorphism in real scenarios  
+- Improved OOP design understanding  
+
+---
+
+### 📅 Day 33 - 2 February 2026
+
+### 🎯 Learning Goals
+- Understand **Design Principles**
+- Learn basics of **Design Patterns**
+- Get introduced to **Multithreading** in C#
+- Practice logic through a simple scenario  
+
+### 📚 Topics Covered
+- Design principles (clean & maintainable code)
+- Overview of common design patterns
+- Introduction to multithreading and concurrency
+
+### 🔑 FlipKey – ASCII-Based String Manipulation
+
+### 🧩 Scenario
+User inputs a string which is manipulated based on **ASCII character values**.
+
+### 🧩 Concepts Used
+- Strings  
+- ASCII value checks  
+- Conditional logic  
+
+### ⚙️ Features
+- Read user input  
+- Manipulate characters using ASCII values  
+- Display transformed output  
+
+### 🚀 Outcome
+- Learned **design principles & patterns** conceptually  
+- Gained first exposure to **multithreading**
+- Strengthened low-level string logic skills  
+
+---
+
+### 📅 Day 34 - 3 February 2026
+
+### 🎯 Learning Goals
+- Continue learning **Multithreading**
+- Continue learning **Design Patterns & Design Principles**
+- Strengthen understanding through recap and discussion
+- Apply logic via a real-world safety scenario
+
+### 📚 Topics Revised & Continued
+- Basics of **Multithreading**  
+  - Threads, execution flow, concurrency (conceptual)  
+- **Design Principles**  
+  - Writing clean, maintainable code  
+- Overview of **Design Patterns**  
+  - Purpose and real-world relevance  
+
+### 🏭 Factory Robot Hazard – Risk Assessment System
+
+### 🧩 Scenario
+A factory evaluates robot safety using:
+- Arm pressure  
+- Worker density  
+- Machine state  
+
+### 🧩 Concepts Used
+- User input  
+- Conditional logic  
+- Exceptional Logic
+
+### ⚙️ Features
+- Collect operational parameters  
+- Calculate hazard risk level  
+- Display safety status  
+
+### 🚀 Outcome
+- Continued progress in **Multithreading**
+- Strengthened grasp of **Design Patterns & Principles**
+- Practiced logical decision-making with real-world inputs  
+
+---
+
+### 📅 Day 35 - 4 February 2026
+
+### 🎯 Learning Goals
+- Learn **DBMS basics**
+- Understand and practice **SQL commands**
+- Install and use **MS SQL Server**
+
+### 📚 Topics Covered
+- Introduction to **DBMS**
+- SQL command categories:
+  - DDL
+  - DML
+  - DCL
+  - TCL
+- Writing and executing basic SQL queries
+
+### 🗄️ MS SQL Server Practice
+- Downloaded and installed **MS SQL Server**
+- Used **SSMS** to:
+  - Create databases and tables  
+  - Insert, update, delete records  
+  - Run queries and view results  
+
+### 🚀 Outcome
+- Gained hands-on experience with **SQL commands**
+- Understood practical DBMS usage
+- Built confidence in using **MS SQL Server**  
