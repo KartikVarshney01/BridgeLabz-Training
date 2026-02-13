@@ -9,4 +9,11 @@
 ///          service packages based on eligibility scores and handle multiple citizen 
 ///          registrations using if-else, switch, break, and continue statements.  
 /// 
+/// Module 3 :
+///         Smart Citizen Database introduces array-based data management by storing citizens
+///         in a single-dimensional array and organizing zone-sector data using jagged arrays.
+///         It demonstrates static auto-ID generation, linear search, and structured memory 
+///         handling to efficiently manage growing citizen records.
+/// 
+/// 
 /// 
