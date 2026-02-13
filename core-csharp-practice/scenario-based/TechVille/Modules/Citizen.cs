@@ -10,5 +10,6 @@ namespace TechVille.Modules
         public int ResidencyYears {get; set;}
         public int EligibilityScore {get; set;}
         public bool IsEligible {get; set;}
+        public string ServicePackage {get; set;} // Module - 2 : Adding Service Package
     }
 }

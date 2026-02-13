@@ -9,47 +9,55 @@ namespace TechVille
     {
         static void Main(String[] args)
         {
-            Console.WriteLine("===== TechVille Citizen Registration Portal =====\n");
-
-            Citizen citizen = new Citizen();
-
-            // Taking User Input
-            Console.Write("Enter Name: ");
-            citizen.CitizenName = Console.ReadLine();
-
-            Console.Write("Enter Age: ");
-            citizen.CitizenAge = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Enter Annual Income: ");
-            citizen.AnnualIncome = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Enter Residency Years: ");
-            citizen.ResidencyYears = Convert.ToInt32(Console.ReadLine());
-
-            // Validation Of Age, Income And Residency years
-            if (!InputValidator.IsValidAge(citizen.CitizenAge) ||
-                !InputValidator.IsValidIncome(citizen.AnnualIncome) ||
-                !InputValidator.IsValidResidency(citizen.ResidencyYears))
-            {
-                Console.WriteLine("\nInvalid Input Provided.");
-                return;
-            }
-
-            // Process
+            // Creating the Service Reference 
             CitizenRegistrationService service = new CitizenRegistrationService();
-            service.CalculateEligibility(citizen);
 
-            // Output
-            Console.WriteLine("\n===== Registration Details =====");
-            Console.WriteLine($"Name: {citizen.CitizenName}");
-            Console.WriteLine($"Age: {citizen.CitizenAge}");
-            Console.WriteLine($"Income: {citizen.AnnualIncome}");
-            Console.WriteLine($"Residency Years: {citizen.ResidencyYears}");
-            Console.WriteLine($"Eligibility Score: {citizen.EligibilityScore}");
-            Console.WriteLine($"Status: {(citizen.IsEligible ? "Eligible" : "Not Eligible")}");
+            Console.WriteLine("===== TechVille Service Eligibility System =====\n");
 
-            Console.WriteLine("\nPress any key to exit...");
-            Console.ReadKey();
+            // Infinte Loop
+            while (true)
+            {
+                Citizen citizen = new Citizen();
+
+                Console.Write("Enter Name: ");
+                citizen.CitizenName = Console.ReadLine();
+
+                Console.Write("Enter Age: ");
+                citizen.CitizenAge = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter Annual Income: ");
+                citizen.AnnualIncome = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Enter Residency Years: ");
+                citizen.ResidencyYears = Convert.ToInt32(Console.ReadLine());
+
+                // Basic Validation
+                if (!InputValidator.IsValidAge(citizen.CitizenAge) ||
+                    !InputValidator.IsValidIncome(citizen.AnnualIncome) ||
+                    !InputValidator.IsValidResidency(citizen.ResidencyYears))
+                {
+                    Console.WriteLine("Invalid data. Try again.\n");
+                    continue;
+                }
+
+                // Calculating & Assigning The Eligibility and Package
+                service.CalculateEligibility(citizen);
+                service.AssignServicePackage(citizen);
+
+                // Displaying Output
+                Console.WriteLine("\n===== Citizen Details =====");
+                Console.WriteLine($"Name: {citizen.CitizenName}");
+                Console.WriteLine($"Eligibility Score: {citizen.EligibilityScore}");
+                Console.WriteLine($"Package: {citizen.ServicePackage}");
+
+                // Checking for next entry by using - Continue or break
+                Console.Write("\nRegister another citizen? (Y/N): ");
+                string choice = Console.ReadLine().ToUpper();
+
+                if (choice != "Y")
+                    break;
+            }
+            Console.WriteLine("\nExiting The Program.");
         }
     }
 }
