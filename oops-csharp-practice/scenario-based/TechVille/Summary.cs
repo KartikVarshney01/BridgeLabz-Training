@@ -32,5 +32,9 @@
 ///         It establishes a base Service class and specialized services to model 
 ///         structured and reusable city service operations.
 /// 
-/// 
+/// Module 7 :
+///         Advanced Service Architecture enhances object-oriented design by introducing 
+///         static members, constructor chaining, encapsulation, and composition through 
+///         a class-based ServicePlan model, enabling flexible and scalable service 
+///         customization.
 /// 
