@@ -27,6 +27,11 @@ namespace TechVille
         // Method To Add New Citizens In The Citizen List
         public void AddCitizens(Citizen citizen, int zone, int sector)
         {
+            if(zone > ZoneAndSectors.Length || sector > ZoneAndSectors[zone].Length)
+            {
+                Console.WriteLine("Zone And Sector is out of order");
+                return;
+            }
             if (count < CitizensList.Length)
             {
                 CitizensList[count++] = citizen;
@@ -36,6 +41,8 @@ namespace TechVille
                     ZoneAndSectors[zone][sector]++;
                 }
             }
+            citizen.SetCitizenId();
+            Console.WriteLine("Citizen Registered Successfully!");
         }
 
         // Method To Search If A Citizen Exist Or Not By Using Their Id
@@ -44,6 +51,18 @@ namespace TechVille
             for(int i = 0; i < count; i++)
             {
                 if (CitizensList[i].CitizenID == id)
+                {
+                    return CitizensList[i];
+                }
+            }
+            return null;
+        }
+
+        public Citizen SearchByName(string name)
+        {
+            for(int i = 0; i < count; i++)
+            {
+                if(CitizensList[i].CitizenName.ToLower() == name.ToLower())
                 {
                     return CitizensList[i];
                 }

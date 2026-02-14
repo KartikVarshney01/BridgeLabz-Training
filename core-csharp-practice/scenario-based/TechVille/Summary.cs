@@ -15,5 +15,9 @@
 ///         It demonstrates static auto-ID generation, linear search, and structured memory 
 ///         handling to efficiently manage growing citizen records.
 /// 
-/// 
+/// Module 4 : 
+///         Citizen Profile Management enhances the system with string handling, reusable 
+///         utility methods, and structured validation. It implements name formatting, email
+///         validation, case-insensitive search, and profile updates while demonstrating 
+///         pass-by-value and pass-by-reference concepts within a modular architecture.
 /// 

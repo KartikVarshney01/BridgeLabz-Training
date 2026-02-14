@@ -18,5 +18,12 @@ namespace TechVille.Utilities
         {
             return years >= 0;
         }
+        public static bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            return email.Contains("@") && email.Contains(".");
+        }
     }
 }

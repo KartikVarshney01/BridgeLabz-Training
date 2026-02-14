@@ -33,38 +33,52 @@ namespace TechVille
                 Console.WriteLine("\n===== TechVille Registration =====");
                 Console.WriteLine("1. Register Citizen");
                 Console.WriteLine("2. Search By ID");
-                Console.WriteLine("3. Display All Citizens");
-                Console.WriteLine("4. Show Zone Data");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("3. Search By Name");
+                Console.WriteLine("4. Display All Citizens");
+                Console.WriteLine("5. Show Zone Data");
+                Console.WriteLine("6. Exit");
                 Console.Write("Enter Choice : ");
                 int choice = Convert.ToInt32(Console.ReadLine());
 
                 switch (choice)
                 {
                     case 1 :
-                        Citizen citizen = new Citizen();
-                        Console.WriteLine($"Generated Citizen ID: {citizen.CitizenID}");
-
                         Console.Write("Enter Name: ");
-                        citizen.CitizenName = Console.ReadLine();
+                        string name = CitizenUtility.FormatName(Console.ReadLine());
+
+                        Console.Write("Enter Email: ");
+                        string email = Console.ReadLine();
+                        if (!InputValidator.IsValidEmail(email))
+                        {
+                            Console.WriteLine("Invalid Email.");
+                            continue;
+                        }
 
                         Console.Write("Enter Age: ");
-                        citizen.CitizenAge = Convert.ToInt32(Console.ReadLine());
+                        int age = Convert.ToInt32(Console.ReadLine());
 
                         Console.Write("Enter Annual Income: ");
-                        citizen.AnnualIncome = Convert.ToDouble(Console.ReadLine());
+                        double income = Convert.ToDouble(Console.ReadLine());
 
                         Console.Write("Enter Residency Years: ");
-                        citizen.ResidencyYears = Convert.ToInt32(Console.ReadLine());
+                        int years = Convert.ToInt32(Console.ReadLine());
 
                         // Basic Validation
-                        if (!InputValidator.IsValidAge(citizen.CitizenAge) ||
-                            !InputValidator.IsValidIncome(citizen.AnnualIncome) ||
-                            !InputValidator.IsValidResidency(citizen.ResidencyYears))
+                        if (!InputValidator.IsValidAge(age) ||
+                            !InputValidator.IsValidIncome(income) ||
+                            !InputValidator.IsValidResidency(years))
                         {
                             Console.WriteLine("Invalid data. Try again.\n");
                             continue;
                         }
+
+                        Citizen citizen = new Citizen();
+                        citizen.CitizenName = name;
+                        citizen.CitizenEmail = email;
+                        citizen.CitizenAge = age;
+                        citizen.AnnualIncome = income;
+                        citizen.ResidencyYears = years;
+                        // Console.WriteLine($"Generated Citizen ID: {citizen.CitizenID}");
 
                         // Calculating & Assigning The Eligibility and Package
                         service.CalculateEligibility(citizen);
@@ -77,17 +91,16 @@ namespace TechVille
                         int sector = Convert.ToInt32(Console.ReadLine());
 
                         manager.AddCitizens(citizen,zone,sector);
-                        Console.WriteLine("Citizen Registered Successfully!");
                         break;
                     case 2 : 
                         Console.Write("Enter Id To Search : ");
                         int id = Convert.ToInt32(Console.ReadLine());
 
-                        Citizen found = manager.SearchById(id);
+                        Citizen isIdfound = manager.SearchById(id);
 
-                        if(found != null)
+                        if(isIdfound != null)
                         {
-                            Console.WriteLine($"Found : {found.CitizenName}, Package : {found.ServicePackage}");
+                            Console.WriteLine($"Found : {isIdfound.CitizenName}, Package : {isIdfound.ServicePackage}");
                         }
                         else
                         {
@@ -95,12 +108,23 @@ namespace TechVille
                         }
                         break;
                     case 3 :
-                        manager.DisplayAllCitizens();
+                        Console.Write("Enter Name: ");
+                        name = Console.ReadLine();
+
+                        Citizen isNamefound = manager.SearchByName(name);
+
+                        if (isNamefound != null)
+                            Console.WriteLine($"Found: {isNamefound.CitizenName}");
+                        else
+                            Console.WriteLine("Citizen Not Found.");
                         break;
                     case 4 :
+                        manager.DisplayAllCitizens();
+                        break;
+                    case 5 :
                         manager.DisplayZoneData();
                         break;
-                    case 5 : 
+                    case 6 : 
                         Console.WriteLine("Exiting Program");
                         return;
                     default : 
