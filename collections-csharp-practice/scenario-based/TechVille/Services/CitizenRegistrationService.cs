@@ -1,7 +1,7 @@
 using System;
 using TechVille.Modules;
 
-namespace TechVille.Service
+namespace TechVille.Services
 {
     public class CitizenRegistrationService
     {

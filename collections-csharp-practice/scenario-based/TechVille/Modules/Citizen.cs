@@ -19,5 +19,14 @@ namespace TechVille.Modules
         {
             this.CitizenID = nextId++;
         }
+
+        public override string ToString()
+        {
+            return $"ID: {CitizenID}, Name: {CitizenName}, " +
+                $"Email: {CitizenEmail}, Age: {CitizenAge}, " +
+                $"Income: {AnnualIncome}, Residency: {ResidencyYears}, " +
+                $"Package: {ServicePackage}";
+        }
+
     }
 }

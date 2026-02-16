@@ -5,72 +5,72 @@ namespace TechVille
 {
     class CitizenPopulationManager
     {
-        private Citizen[] CitizensList; // Array Containing The Citizens
-        private int count = 0; // To Count The Current Citizen Population.
-
-        // Creating A Jagged Array To Store 5 Zone With Multiple Sectors 
+        private SinglyLinkedList citizens;
+        private DoublyLinkedList profileNavigation;
+        private CircularLinkedList roundRobinList;
         private int[][] ZoneAndSectors;
 
-        // Constructor To Initialize The Citizens List Array And The Zones Of the Zone And Sectors Array.
-        public CitizenPopulationManager(int size,int zoneNumber)
+        public CitizenPopulationManager(int zoneNumber)
         {
-            CitizensList = new Citizen[size];
+            citizens = new SinglyLinkedList();
+            profileNavigation = new DoublyLinkedList();
+            roundRobinList = new CircularLinkedList();
             ZoneAndSectors = new int[zoneNumber][];
         }
 
-        // Method To Add Or Initialize The Sectors of each zone
-        public void InitializeSectors(int zoneIdx, int SectorNumber)
+        public void InitializeSectors(int zoneIdx, int sectorNumber)
         {
-            ZoneAndSectors[zoneIdx] = new int[SectorNumber];
+            ZoneAndSectors[zoneIdx] = new int[sectorNumber];
         }
 
-        // Method To Add New Citizens In The Citizen List
         public void AddCitizen(Citizen citizen, int zone, int sector)
         {
-            if(zone > ZoneAndSectors.Length || sector > ZoneAndSectors[zone].Length)
-            {
-                Console.WriteLine("Zone And Sector is out of order");
-                return;
-            }
-            if (count < CitizensList.Length)
-            {
-                CitizensList[count++] = citizen;
-
-                if(zone <  ZoneAndSectors.Length && sector < ZoneAndSectors[zone].Length)
-                {
-                    ZoneAndSectors[zone][sector]++;
-                }
-            }
             citizen.SetCitizenId();
+
+            citizens.Insert(citizen);
+            profileNavigation.Insert(citizen);
+            roundRobinList.Insert(citizen);
+
+            ZoneAndSectors[zone][sector]++;
+
             Console.WriteLine("Citizen Registered Successfully!");
         }
 
-        // Method To Search If A Citizen Exist Or Not By Using Their Id
         public Citizen SearchById(int id)
         {
-            for(int i = 0; i < count; i++)
-            {
-                if (CitizensList[i].CitizenID == id)
-                {
-                    return CitizensList[i];
-                }
-            }
-            return null;
+            return citizens.SearchById(id);
         }
 
         public Citizen SearchByName(string name)
         {
-            for(int i = 0; i < count; i++)
-            {
-                if(CitizensList[i].CitizenName.ToLower() == name.ToLower())
-                {
-                    return CitizensList[i];
-                }
-            }
-            return null;
+            return citizens.SearchByName(name);
         }
 
-        // Method To Display The Zone Data
+        public void DeleteCitizen(int id)
+        {
+            citizens.DeleteById(id);
+        }
+
+        public void DisplayAllCitizens()
+        {
+            citizens.Traverse();
+        }
+
+        public void DisplayForwardProfiles()
+        {
+            profileNavigation.TraverseForward();
+        }
+
+        public void DisplayBackwardProfiles()
+        {
+            profileNavigation.TraverseBackward();
+        }
+
+        public void RunRoundRobin(int cycles)
+        {
+            roundRobinList.RoundRobin(cycles);
+        }
+
         public void DisplayZoneData()
         {
             Console.WriteLine("\nZone-Sector Citizen Count:");
@@ -83,16 +83,6 @@ namespace TechVille
                     Console.Write(ZoneAndSectors[i][j] + " ");
                 }
                 Console.WriteLine();
-            }
-        }
-
-        // Method To Display All Citizens
-        public void DisplayAllCitizens()
-        {
-            for (int i = 0; i < count; i++)
-            {
-                Console.WriteLine($"ID: {CitizensList[i].CitizenID}, Name: {CitizensList[i].CitizenName}"+
-                                $", Package: {CitizensList[i].ServicePackage}");
             }
         }
     }
