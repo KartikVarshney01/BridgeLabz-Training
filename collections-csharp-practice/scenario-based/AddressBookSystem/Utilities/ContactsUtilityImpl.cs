@@ -29,10 +29,18 @@ namespace AddressBookSystem
                 Contacts newContact = new Contacts();
 
                 Console.WriteLine("Enter the Person Details : ");
+
                 Console.Write("Enter Your First Name : ");
-                newContact.FirstName = Console.ReadLine();
+                string firstName = Console.ReadLine();
+                if (!ValidationHelper.ValidateName(firstName))
+                    throw new InvalidContactException("Invalid First Name format.");
+                newContact.FirstName = firstName;
+
                 Console.Write("Enter Your Last Name : ");
-                newContact.LastName = Console.ReadLine();
+                string lastName = Console.ReadLine();
+                if (!ValidationHelper.ValidateName(lastName))
+                    throw new InvalidContactException("Invalid Last Name format.");
+                newContact.LastName = lastName;
 
                 //UC-7 Checking if Person With Same Name Exists Or Not
                 int foundIdx = SearchContact(newContact.FirstName, newContact.LastName);
@@ -44,17 +52,40 @@ namespace AddressBookSystem
                 }
 
                 Console.Write("Enter Your Address : ");
-                newContact.Address = Console.ReadLine();
+                string address = Console.ReadLine();
+                if (!ValidationHelper.ValidateAddress(address))
+                    throw new InvalidContactException("Invalid Address.");
+                newContact.Address = address;
+
                 Console.Write("Enter Your City : ");
-                newContact.City = Console.ReadLine();
+                string city = Console.ReadLine();
+                if (!ValidationHelper.ValidateCityState(city))
+                    throw new InvalidContactException("Invalid City.");
+                newContact.City = city;
+
                 Console.Write("Enter Your State : ");
-                newContact.State = Console.ReadLine();
+                string state = Console.ReadLine();
+                if (!ValidationHelper.ValidateCityState(state))
+                    throw new InvalidContactException("Invalid State.");
+                newContact.State = state;
+
                 Console.Write("Enter Your Zip : ");
-                newContact.Zip = Convert.ToInt32(Console.ReadLine());
+                string zip = Console.ReadLine();
+                if (!ValidationHelper.ValidateZip(zip))
+                    throw new InvalidContactException("Invalid Zip Code.");
+                newContact.Zip = Convert.ToInt32(zip);
+
                 Console.Write("Enter Your PhoneNumber : ");
-                newContact.PhoneNumber = Convert.ToInt64(Console.ReadLine());
+                string phone = Console.ReadLine();
+                if (!ValidationHelper.ValidatePhone(phone))
+                    throw new InvalidContactException("Invalid Phone Number.");
+                newContact.PhoneNumber = Convert.ToInt64(phone);
+
                 Console.Write("Enter Your Email : ");
-                newContact.Email = Console.ReadLine();
+                string email = Console.ReadLine();
+                if (!ValidationHelper.ValidateEmail(email))
+                    throw new InvalidContactException("Invalid Email format.");
+                newContact.Email = email;
 
                 // Adding Inside The Current Address Book
                 currentAddressBook.Contacts.Add(newContact);
@@ -108,22 +139,54 @@ namespace AddressBookSystem
                 Contacts updateContact = new Contacts();
 
                 Console.WriteLine("Enter the Person Updated Details : \n");
+
                 Console.Write("Enter Your First Name : ");
-                updateContact.FirstName = Console.ReadLine();
+                string firstName = Console.ReadLine();
+                if (!ValidationHelper.ValidateName(firstName))
+                    throw new InvalidContactException("Invalid First Name format.");
+                updateContact.FirstName = firstName;
+
                 Console.Write("Enter Your Last Name : ");
-                updateContact.LastName = Console.ReadLine();
+                string lastName = Console.ReadLine();
+                if (!ValidationHelper.ValidateName(lastName))
+                    throw new InvalidContactException("Invalid Last Name format.");
+                updateContact.LastName = lastName;
+
                 Console.Write("Enter Your Address : ");
-                updateContact.Address = Console.ReadLine();
+                string address = Console.ReadLine();
+                if (!ValidationHelper.ValidateAddress(address))
+                    throw new InvalidContactException("Invalid Address.");
+                updateContact.Address = address;
+
                 Console.Write("Enter Your City : ");
-                updateContact.City = Console.ReadLine();
+                string city = Console.ReadLine();
+                if (!ValidationHelper.ValidateCityState(city))
+                    throw new InvalidContactException("Invalid City.");
+                updateContact.City = city;
+
                 Console.Write("Enter Your State : ");
-                updateContact.State = Console.ReadLine();
+                string state = Console.ReadLine();
+                if (!ValidationHelper.ValidateCityState(state))
+                    throw new InvalidContactException("Invalid State.");
+                updateContact.State = state;
+
                 Console.Write("Enter Your Zip : ");
-                updateContact.Zip = Convert.ToInt32(Console.ReadLine());
+                string zip = Console.ReadLine();
+                if (!ValidationHelper.ValidateZip(zip))
+                    throw new InvalidContactException("Invalid Zip Code.");
+                updateContact.Zip = Convert.ToInt32(zip);
+
                 Console.Write("Enter Your PhoneNumber : ");
-                updateContact.PhoneNumber = Convert.ToInt64(Console.ReadLine());
+                string phone = Console.ReadLine();
+                if (!ValidationHelper.ValidatePhone(phone))
+                    throw new InvalidContactException("Invalid Phone Number.");
+                updateContact.PhoneNumber = Convert.ToInt64(phone);
+
                 Console.Write("Enter Your Email : ");
-                updateContact.Email = Console.ReadLine();
+                string email = Console.ReadLine();
+                if (!ValidationHelper.ValidateEmail(email))
+                    throw new InvalidContactException("Invalid Email format.");
+                updateContact.Email = email;
 
                 Contacts oldContact = currentAddressBook.Contacts[editContactIdx];
                 currentAddressBook.Contacts[editContactIdx] = updateContact;
