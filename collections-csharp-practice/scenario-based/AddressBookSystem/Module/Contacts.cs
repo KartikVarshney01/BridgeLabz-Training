@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AddressBookSystem
+{
+    // The Encapsulated Contacts Class Providing Details for the various fields of it.
+    internal class Contacts
+    {
+        // Using Setter and Getter Methods to access the fields. 
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public int Zip { get; set; }
+        public long PhoneNumber { get; set; }
+        public string Email { get; set; }
+
+        public override string ToString()
+        {
+            return
+                "----------------------------------------\n" +
+                $"Name     : {FirstName} {LastName}\n" +
+                $"Address  : {Address}\n" +
+                $"City     : {City}\n" +
+                $"State    : {State}\n" +
+                $"Zip      : {Zip}\n" +
+                $"Phone    : {PhoneNumber}\n" +
+                $"Email    : {Email}\n" +
+                "----------------------------------------";
+        }
+    }
+}

@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AddressBookSystem
+{
+    // Address Book Interface 
+    internal interface IAddressBook
+    {
+        // To Add New Address Books
+        void AddAddressBook();
+
+        // To Select a Existing Address Book
+        AddressBook SelectAddressBook();
+
+        // To Search for persons by city or state
+        void SearchByCityOrState();
+
+        // To Count for persons in city or state
+        void CountByCityOrState();
+    }
+}
